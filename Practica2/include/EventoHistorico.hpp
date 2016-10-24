@@ -1,33 +1,52 @@
+/**
+  * @file EventoHistorico.hpp
+  * @brief Fichero cabecera del TDA EventoHistorico
+  *
+  */
+
+
 #ifndef EVENTO_HISTORICO
 #define EVENTO_HISTORICO
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include <cassert>
 
-enum campo {algoritmos, peliculas, ciencias, historia};
+struct Fecha{
+  int anio;
+  bool dc;
+};
+
+typedef std::string Acontecimiento;
 
 class EventoHistorico{
 private:
-  int fecha;
-  std::vector<std::string> acontecimientos;
+  Fecha f;
+  std::vector<Acontecimiento> evento;
 
 public:
-  EventoHistorico():fecha(-1){}
+  //Constructores
+  EventoHistorico();
   EventoHistorico(int f);
-  EventoHistorico(int f, std::vector<std::string> v);
-  EventoHistorico(int f, std::string keyword);
-  //EventoHistorico(int f, std::vector<std::string> keywords);
-  EventoHistorico(int f, campo tipo);
+  EventoHistorico(int f, std::vector<Acontecimiento> v);
 
+  //Set Get
   int getFecha();
-  std::vector<std::string> getAcontecimientos();
+  std::vector<Acontecimiento> getEvento();
+  void setFecha(int f);
+  void setEvento(std::vector<Acontecimiento> v);
+  void addEvento(Acontecimiento a);
+  void addEvento(std::vector<Acontecimiento> evento);
 
-  std::ostream mostrarEvento(std::ostream os);
-  std::istream leerEvento(std::istream is); //Haria falta añadir algun parametro para saber como leer?
+  //Eliminar
+  bool eliminarAcontecimiento(Acontecimiento a);
+  bool eliminar(std::string key);
 
+  //Busqueda
+  std::vector<Acontecimiento> buscarAcontecimientos(std::string key); //Busca acontecimientos que contienen
 
+  //Entrada Salida
+  std::ostream& mostrarEvento(std::ostream& os) const;
+  std::istream& leerEvento(std::istream& is); //Haria falta añadir algun parametro para saber como leer?
 
 };
 
