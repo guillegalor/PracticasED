@@ -14,16 +14,19 @@ private:
   std::vector<std::string> acontecimientos;
 
 public:
-  EventoHistorico(int fecha);
-  EventoHistorico(int fecha, std::string keyword);
-  //EventoHistorico(int fecha, std::vector<std::string> keywords);
-  EventoHistorico(int fecha, campo tipo);
+  EventoHistorico():fecha(-1){}
+  EventoHistorico(int f);
+  EventoHistorico(int f, std::vector<std::string> v);
+  EventoHistorico(int f, std::string keyword);
+  //EventoHistorico(int f, std::vector<std::string> keywords);
+  EventoHistorico(int f, campo tipo);
 
   int getFecha();
   std::vector<std::string> getAcontecimientos();
 
-  void add(EventoHistorico evento);
-  
+  std::ostream mostrarEvento(std::ostream os);
+  std::istream leerEvento(std::istream is); //Haria falta añadir algun parametro para saber como leer?
+
 
 
 };
