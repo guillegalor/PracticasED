@@ -1,9 +1,3 @@
-/**
-  * @file EventoHistorico.hpp
-  * @brief Fichero cabecera del TDA EventoHistorico
-  *
-  */
-
 
 #ifndef EVENTO_HISTORICO
 #define EVENTO_HISTORICO
@@ -31,12 +25,15 @@ public:
   //Constructores
   EventoHistorico();
   EventoHistorico(int f);
+  EventoHistorico(Fecha f);
   EventoHistorico(int f, std::vector<Acontecimiento> v);
+  EventoHistorico(Fecha f, std::vector<Acontecimiento> v);
 
   //Set Get
-  int getFecha();
-  std::vector<Acontecimiento> getEvento();
+  Fecha getFecha() const{return f;}
+  std::vector<Acontecimiento> getEvento() const{return evento;};
   void setFecha(int f);
+  void setFecha(Fecha f);
   void setEvento(std::vector<Acontecimiento> v);
   void addEvento(Acontecimiento a);
   void addEvento(std::vector<Acontecimiento> evento);
@@ -46,7 +43,7 @@ public:
   bool eliminar(std::string key);
 
   //Busqueda
-  std::vector<Acontecimiento> buscarAcontecimientos(std::string key); //Busca acontecimientos que contienen la palabra clave "key"
+  std::vector<Acontecimiento> buscarAcontecimientos(std::string key) const; //Busca acontecimientos que contienen la palabra clave "key"
 
   //Entrada Salida
   std::ostream& mostrarEvento(std::ostream& os) const;
