@@ -93,16 +93,20 @@ bool EventoHistorico::eliminarAcontecimiento(Acontecimiento a){
     return false;
 }
 
-void EventoHistorico::eliminar(std::string key){
+int EventoHistorico::eliminar(std::string key){
   std::vector<Acontecimiento>::iterator p = evento.begin();
+  int acontecimientos_eliminados = 0;
 
   while (p != evento.end()) {
     if (p->find(key) != std::string::npos) {
       evento.erase(p);
+      ++acontecimientos_eliminados;
     }
     else
       ++p;
   }
+
+  return acontecimientos_eliminados;
 }
 
 /*
