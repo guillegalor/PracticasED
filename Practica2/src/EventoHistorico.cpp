@@ -1,5 +1,5 @@
 #include "../include/EventoHistorico.hpp"
-
+#include <sstream>
 
 /*
 Constructores
@@ -71,7 +71,7 @@ std::vector<Acontecimiento>::iterator EventoHistorico::busquedaAcontecimiento(Ac
   return p;
 }
 
-std::vector<Acontecimiento> EventoHistorico::buscarAcontecimientos(std::string key) const{
+std::vector<Acontecimiento> EventoHistorico::buscar(std::string key) const{
   std::vector<Acontecimiento> v;
 
   for (std::vector<Acontecimiento>::const_iterator p = evento.begin(); p != evento.end(); ++p){
@@ -125,13 +125,18 @@ E/S
  std::istream& EventoHistorico::leerEvento(std::istream& is){
   std::string a;
 
+
   std::getline(is, a, '#');
   f.anio= std::stoi(a);
 
   std::getline(is, a, '#');
   f.dc= std::stoi(a);
 
-  while (std::getline(is, a, '#')) {
+  std::getline(is, a);
+
+  std::stringstream ss(a);
+
+  while (std::getline(ss, a, '#')) {
     evento.push_back(a);
   }
 

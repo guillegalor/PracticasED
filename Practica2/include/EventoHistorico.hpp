@@ -10,6 +10,13 @@
 #include <iostream>
 #include <vector>
 
+struct Fecha{
+  int anio;
+  bool dc;
+};
+
+typedef std::string Acontecimiento;
+
 /**
   *  @brief T.D.A. EventoHistorico
   *
@@ -22,13 +29,6 @@
   * @author J. Capote, G. Galindo y C. de la Torre
   * @date Octubre 2016
   */
-
-struct Fecha{
-  int anio;
-  bool dc;
-};
-
-typedef std::string Acontecimiento;
 
 class EventoHistorico{
 
@@ -157,7 +157,7 @@ public:
     * @param key string que debe contener los acontecimientos buscados
     * @return Vector de acontecimientos con todos los encontrados en la busqueda
     */
-  std::vector<Acontecimiento> buscarAcontecimientos(std::string key) const;
+  std::vector<Acontecimiento> buscar(std::string key) const;
 
   /**
     * @brief Salida de un EventoHistorico a ostream
@@ -179,8 +179,7 @@ public:
   /**
     * @brief Salida de un EventoHistorico a ostream
     * @param os stream de salida
-    * @post Se obtiene en os la salida en un formato que sea mas agradable a la vista y facil de
-    *   comprender
+    * @post Se obtiene en os la salida en un formato que intuitivo y agradable a la vista
     */
   std::ostream& prettyPrint(std::ostream& os) const;
 
