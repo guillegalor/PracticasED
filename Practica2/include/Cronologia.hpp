@@ -10,32 +10,33 @@ class Cronologia{
     std::vector<EventoHistorico> eventos;
 
     void insertaEvento(EventoHistorico v);
+    std::vector<EventoHistorico>::iterator getPos(Fecha f);
+    std::vector<EventoHistorico>::const_iterator getPos(Fecha f)const;
   public:
     //Constructores
     Cronologia(){}
     Cronologia(EventoHistorico evento);
-    Cronologia(std::vector<EventoHistorico> v):eventos(v){}         // TODO Pensar si hace falta algun constructor mas constructores
+    Cronologia(std::vector<EventoHistorico> v);
 
-    //Set&Get                                                       // TODO Comprobar cuales son o no constantes
-    std::vector<EventoHistorico> getEventos(){return eventos;}
-    void setEventos(std::vector<EventoHistorico> v){eventos = v;}
-    void addEvento(EventoHistorico a);                              // Añade el evento historico(Realiza la union)
-    void addEvento(std::vector<EventoHistorico> v);                 // Añade el vector v a la cronologia(Realiza la union)
-    Fecha getPrimerAño();                                           // Devuelve el primer año de la cronologia
-    Fecha getUltimoAño();                                           // Devuelve el ultimo año de la cronologia
-    EventoHistorico getEventoAnio(Fecha f);                         // Devuelve el evento sucedido en la fecha f
-                                                                    // TODO Pensar acerca de si merece la pena definir el struct fecha
+    //Set&Get                                                                 
+    std::vector<EventoHistorico> getEventos()const {return eventos;}
+    void setEventoHistorico(std::vector<EventoHistorico> v);
+    void addEventoHistorico(EventoHistorico a);                               // Añade el evento historico(Realiza la union)
+    void addEventoHistorico(std::vector<EventoHistorico> v);                  // Añade el vector v a la cronologia(Realiza la union)
+    Fecha getPrimerAño()const;                                                // Devuelve el primer año de la cronologia
+    Fecha getUltimoAño()const;                                                // Devuelve el ultimo año de la cronologia
+    EventoHistorico getEventoAnio(Fecha f)const;                              // Devuelve el evento sucedido en la fecha f
 
     //Eliminar y busqueda
-    bool eliminarEventoAnio(Fecha f);                               // Elimina el evento historico del año
-    void restringir(Fecha f, Fecha l);                              // Restringe la cronologia a los eventos contenidos entre las fechas f y l
+    bool eliminarEventoAnio(Fecha f);                                         // Elimina el evento historico del año
+    std::vector<EventoHistorico> restringir(Fecha f, Fecha l)const;                                        // Restringe la cronologia a los eventos contenidos entre las fechas f y l
     // int eliminar(std::string key);
-    std::vector<EventoHistorico> buscar(std::string key);           // Busca todos aquellos eventos que contengan al menos un acontecimiento con la clave key.
+    std::vector<EventoHistorico> buscar(std::string key)const;                     // Busca todos aquellos eventos que contengan al menos un acontecimiento con la clave key.
 
     //E&S
-    std::istream& leerCronologia(std::istream& is);                 // Carga la cronologia del flujo de entrada is
-    std::ostream& mostrarCronologia(std::ostream& os) const;        // Imprime la cronologia en el flujo de salid os
-    std::ostream& prettyPrint(std::ostream& os) const;              // Muestra la cronologia en una interfaz intuitiva y agradable
+    std::istream& leerCronologia(std::istream& is);                           // Carga la cronologia del flujo de entrada is
+    std::ostream& mostrarCronologia(std::ostream& os) const;                  // Imprime la cronologia en el flujo de salid os
+    std::ostream& prettyPrint(std::ostream& os) const;                        // Muestra la cronologia en una interfaz intuitiva y agradable
 
 
 };

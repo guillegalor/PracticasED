@@ -13,6 +13,15 @@
 struct Fecha{
   int anio;
   bool dc;
+
+  Fecha();
+  Fecha(int f);
+
+  bool operator<(Fecha f);
+  bool operator>(Fecha f);
+  bool operator==(Fecha f);
+  bool operator<=(Fecha f);
+  bool operator>=(Fecha f);
 };
 
 typedef std::string Acontecimiento;
@@ -60,30 +69,20 @@ private:
   std::vector<Acontecimiento>::iterator busquedaAcontecimiento(Acontecimiento a);
 
 public:
+
   /**
     * @brief Constructor por defecto de la clase. Crea el evento con el año -1
     * y el vector de acontecimientos vacio.
     */
   EventoHistorico();
-  /**
-    * @brief Constructor de la clase
-    * @param f Año del EventoHistorico a construir
-    * @return Crea el EventoHistorico con año f dc y ningun evento
-    */
-  EventoHistorico(int f);
+
   /**
     * @brief Constructor de la clase
     * @param f Fecha del EventoHistorico a construir
     * @return Crea el EventoHistorico con fecha f y ningun evento
     */
   EventoHistorico(Fecha f);
-  /**
-    * @brief Constructor de la clase
-    * @param f año del EventoHistorico a construir
-    * @param v Evento del EventoHistorico a construir
-    * @return Crea el EventoHistorico con año f y los acontecmientos contenidos en v
-    */
-  EventoHistorico(int f, std::vector<Acontecimiento> v);
+
   /**
     * @brief Constructor de la clase
     * @param f año del EventoHistorico a construir
@@ -104,12 +103,6 @@ public:
     */
   std::vector<Acontecimiento> getEvento() const{return evento;};
 
-  /**
-    * @brief Asignación de una Fecha
-    * @param f Año del EventoHistorico a asignar
-    * @return Asigna al objeto impl�cito el año f
-    */
-  void setFecha(int f);
   /**
     * @brief Asignación de una Fecha
     * @param f Fecha del EventoHistorico a asignar
@@ -137,6 +130,14 @@ public:
     * @return Añade al vector this->evento los acontecimientos de evento
     */
   void addEvento(std::vector<Acontecimiento> evento);
+
+  /**
+    * @brief Añadir un conjunto acontecimientos de otro evento al evento, comprobando que no esten ya incluidos
+    * @param V evento al que pertenecen los acontecimientos a añadir
+    * @return Añade al vector this->evento los acontecimientos del evento v
+    * @pre La fecha de v y el evento debe coincidir
+    */
+  void addEvento(EventoHistorico v);
 
   /**
     * @brief Eliminar un acontecimiento concreto a evento
