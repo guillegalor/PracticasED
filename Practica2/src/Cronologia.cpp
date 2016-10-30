@@ -37,6 +37,8 @@ std::vector<EventoHistorico>::iterator Cronologia::getPos(Fecha f){
     if (p->getFecha() == f) {
       encontrado = true;
     }
+    else
+      ++p;
   }
 
   return p;

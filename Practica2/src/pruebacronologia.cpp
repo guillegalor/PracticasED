@@ -1,7 +1,6 @@
-#include "EventoHistorico.hpp"
-#include "Cronologia.hpp"
 #include <fstream>
 #include <iostream>
+#include "../include/Cronologia.hpp"
 
 int main(int argc, char * argv[]){
 
@@ -21,12 +20,17 @@ int main(int argc, char * argv[]){
 
    mi_cronologia.prettyPrint(std::cout);
 
+
    int anio;
+
    std::cout<<"Dime un año a consultar:";
    std::cin >> anio;
 
+   Fecha fec(anio);
+
    EventoHistorico mi_evento;
-   mi_evento = mi_cronologia.getEventoAnio(anio);
+
+   mi_evento = mi_cronologia.getEventoAnio(fec);
 
    std::cout << "El evento que se encontro con ese año es: " << std::endl;
    mi_evento.prettyPrint(std::cout);
@@ -61,9 +65,6 @@ int main(int argc, char * argv[]){
    std::cout << "mostramos la cronologia con el nuevo evento: " << std::endl;
    mi_cronologia.prettyPrint(std::cout);
 
-
-   //std::cout << "El primer año de nuestra cronologia es: " << std::endl;
-   //mi_fecha = mi_cronologia.getPrimerAnio();
 
    std::cout << "Introduzca una fecha para borrar ese evento de nuestra cronologia: " << std::endl;
    std::cin >> entero;
