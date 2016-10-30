@@ -1,4 +1,4 @@
-#include "../include/EventoHistorico.hpp"
+#include "EventoHistorico.hpp"
 #include <sstream>
 #include <cassert>
 

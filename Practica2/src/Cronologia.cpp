@@ -1,4 +1,4 @@
-#include "../include/Cronologia.hpp"
+#include "Cronologia.hpp"
 #include <sstream>
 
 /*

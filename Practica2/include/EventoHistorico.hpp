@@ -59,7 +59,7 @@ private:
     *
     */
   Fecha f;  /**< Año */
-  std::vector<Acontecimiento> evento;  /**< Eventos */
+  std::vector<Acontecimiento> evento;  /**< Acontecimientos */
 
   /**
    * @brief Busca un acontecimiento determinado en el vector de acontecimientos
