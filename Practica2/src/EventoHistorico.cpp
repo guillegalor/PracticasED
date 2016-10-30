@@ -95,7 +95,7 @@ void EventoHistorico::setEvento(std::vector<Acontecimiento> v){
   this->evento = v;
 }
 
-void EventoHistorico::addEvento(Acontecimiento a){ 
+void EventoHistorico::addEvento(Acontecimiento a){
   if (busquedaAcontecimiento(a) == evento.end()) {
     evento.push_back(a);
   }
@@ -174,7 +174,7 @@ int EventoHistorico::eliminar(std::string key){
 E/S
  */
 
- std::ostream& EventoHistorico::mostrarEvento(std::ostream& os) const{
+std::ostream& EventoHistorico::mostrarEvento(std::ostream& os) const{
    os << f.anio << '#' << f.dc;
    for (std::vector<Acontecimiento>::const_iterator p = evento.begin(); p != evento.end(); ++p){
      os << '#' << *p;
@@ -183,7 +183,7 @@ E/S
    return os;
  }
 
- std::istream& EventoHistorico::leerEvento(std::istream& is){
+std::istream& EventoHistorico::leerEvento(std::istream& is){
   std::string a;
 
 
@@ -202,9 +202,9 @@ E/S
   }
 
   return is;
- }
+}
 
- std::ostream& EventoHistorico::prettyPrint(std::ostream& os) const{
+std::ostream& EventoHistorico::prettyPrint(std::ostream& os) const{
   os << "Año: " << f.anio;
   if (f.dc)
     os << "dc";
@@ -218,4 +218,13 @@ E/S
   }
 
    return os;
- }
+}
+
+std::ostream& operator<<(std::ostream& os, EventoHistorico a){
+   return a.mostrarEvento(os);
+}
+
+
+std::istream& operator>>(std::istream& is, EventoHistorico a){
+  return a.leerEvento(is);
+}

@@ -86,11 +86,11 @@ void Cronologia::addEventoHistorico(std::vector<EventoHistorico> v){
     addEventoHistorico(*p);
 }
 
-Fecha Cronologia::getPrimerAño()const{
+Fecha Cronologia::getPrimerAnio()const{
   return eventos.begin()->getFecha();
 }
 
-Fecha Cronologia::getUltimoAño()const{
+Fecha Cronologia::getUltimoAnio()const{
   return std::prev(eventos.end())->getFecha();
 }
 
@@ -152,3 +152,34 @@ std::vector<EventoHistorico> Cronologia::buscar(std::string key)const{
 }
 
 // TODO Implementar E/S
+
+/*
+E/S
+ */
+
+std::ostream& Cronologia::mostrarCronologia(std::ostream& os) const{
+  for (std::vector<EventoHistorico>::const_iterator p = eventos.begin(); p != eventos.end() ; ++p){
+    os << *p;
+  }
+
+  return os;
+}
+
+std::istream& Cronologia::leerCronologia(std::istream& is){
+  eventos.clear();
+  EventoHistorico a;
+
+  while (is >> a) {
+    insertaEvento(a);
+  }
+
+  return is;
+}
+
+std::ostream& Cronologia::prettyPrint(std::ostream& os) const{
+  for (std::vector<EventoHistorico>::const_iterator p = eventos.begin(); p != eventos.end() ; ++p){
+    p->prettyPrint(os);
+  }
+
+  return os;
+}

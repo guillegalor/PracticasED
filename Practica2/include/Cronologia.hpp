@@ -18,13 +18,13 @@ class Cronologia{
     Cronologia(EventoHistorico evento);
     Cronologia(std::vector<EventoHistorico> v);
 
-    //Set&Get                                                                 
+    //Set&Get
     std::vector<EventoHistorico> getEventos()const {return eventos;}
     void setEventoHistorico(std::vector<EventoHistorico> v);
     void addEventoHistorico(EventoHistorico a);                               // Añade el evento historico(Realiza la union)
     void addEventoHistorico(std::vector<EventoHistorico> v);                  // Añade el vector v a la cronologia(Realiza la union)
-    Fecha getPrimerAño()const;                                                // Devuelve el primer año de la cronologia
-    Fecha getUltimoAño()const;                                                // Devuelve el ultimo año de la cronologia
+    Fecha getPrimerAnio()const;                                                // Devuelve el primer año de la cronologia
+    Fecha getUltimoAnio()const;                                                // Devuelve el ultimo año de la cronologia
     EventoHistorico getEventoAnio(Fecha f)const;                              // Devuelve el evento sucedido en la fecha f
 
     //Eliminar y busqueda

@@ -186,4 +186,7 @@ public:
 
 };
 
+std::ostream& operator<<(std::ostream& os, EventoHistorico a);
+std::istream& operator>>(std::istream& is, EventoHistorico a);
+
 #endif
