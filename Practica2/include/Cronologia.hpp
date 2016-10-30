@@ -36,7 +36,7 @@ class Cronologia{
     //E&S
     std::istream& leerCronologia(std::istream& is);                           // Carga la cronologia del flujo de entrada is
     std::ostream& mostrarCronologia(std::ostream& os) const;                  // Imprime la cronologia en el flujo de salid os
-    std::ostream& prettyPrint(std::ostream& os) const;                        // Muestra la cronologia en una interfaz intuitiva y agradable
+    std::ostream& prettyPrintCronologia(std::ostream& os) const;                        // Muestra la cronologia en una interfaz intuitiva y agradable
 
 
 };

@@ -176,7 +176,7 @@ std::istream& Cronologia::leerCronologia(std::istream& is){
   return is;
 }
 
-std::ostream& Cronologia::prettyPrint(std::ostream& os) const{
+std::ostream& Cronologia::prettyPrintCronologia(std::ostream& os) const{
   for (std::vector<EventoHistorico>::const_iterator p = eventos.begin(); p != eventos.end() ; ++p){
     p->prettyPrint(os);
   }
