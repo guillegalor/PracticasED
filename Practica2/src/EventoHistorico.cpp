@@ -186,7 +186,6 @@ std::ostream& EventoHistorico::mostrarEvento(std::ostream& os) const{
 std::istream& EventoHistorico::leerEvento(std::istream& is){
   std::string a;
 
-
   std::getline(is, a, '#');
   f.anio= std::stoi(a);
 

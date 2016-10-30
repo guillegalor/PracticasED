@@ -1,4 +1,5 @@
 #include "../include/Cronologia.hpp"
+#include <sstream>
 
 /*
 Private
@@ -167,16 +168,20 @@ std::ostream& Cronologia::mostrarCronologia(std::ostream& os) const{
 
 std::istream& Cronologia::leerCronologia(std::istream& is){
   eventos.clear();
+  std::string str;
   EventoHistorico a;
 
-  while (is >> a) {
+  while (std::getline(is,str)) {
+    std::stringstream ss(str);
+    a.leerEvento(ss);
     insertaEvento(a);
+
   }
 
   return is;
 }
 
-std::ostream& Cronologia::prettyPrintCronologia(std::ostream& os) const{
+std::ostream& Cronologia::prettyPrint(std::ostream& os) const{
   for (std::vector<EventoHistorico>::const_iterator p = eventos.begin(); p != eventos.end() ; ++p){
     p->prettyPrint(os);
   }
