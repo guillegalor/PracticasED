@@ -1,7 +1,7 @@
-#ifndef PILA_MAX_
-#define PILA_MAX_
+#ifndef PILA_MAX
+#define PILA_MAX
 
-#include "cola.hpp"
+#include "vector_dinamico.hpp"
 
 template <class T>
 class PilaMax{
@@ -14,7 +14,7 @@ class PilaMax{
       Elemento(T e, T m): elem(e), max(m){}
     };
 
-    Cola<Elemento> datos;
+    VectorDinamico<Elemento> datos;
 
   public:
     /*
@@ -23,9 +23,7 @@ class PilaMax{
     PilaMax<T>(){}
     PilaMax<T>(const PilaMax<T>& p):datos(p.datos){}
     //~PilaMax<T>();
-    PilaMax<T>& operator=(const PilaMax<T>& p){
-      datos = p.datos;
-    }
+    PilaMax<T>& operator=(const PilaMax<T>& p){datos = p.datos;}
 
     /*
     Metodos propios de una pila
@@ -33,11 +31,12 @@ class PilaMax{
 
     bool vacia() const{return datos.vacia();}
     void poner(const T& t_elem);
-    void quitar(){datos.quitar();}
-    T tope() const{return datos.frente().elem;}
-    T max() const{return datos.frente().max;}
+    void quitar(){datos.popback();}
+    T tope() const{return datos.getLast().elem;}
+    T max() const{return datos.getLast().max;}
 };
 
-#include "../src/Pila_max_Cola.cpp"
+#include "../src/Pila_max_VD.cpp"
+
 
 #endif

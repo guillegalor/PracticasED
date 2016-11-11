@@ -156,7 +156,6 @@ std::vector<EventoHistorico> Cronologia::buscar(std::string key)const{
   return v;
 }
 
-// TODO Implementar E/S
 
 /*
 E/S
