@@ -100,7 +100,7 @@ void VectorDinamico<T>::pushback(T elem){
 	if (reservados == numelem) {
 		reserve(numelem+1);
 	}
-	datos[numelem+1] = elem;
+	datos[numelem] = elem;
 	++numelem;
 }
 

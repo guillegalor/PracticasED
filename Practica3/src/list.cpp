@@ -51,11 +51,12 @@ bool List<T>::vacia()const{
 
 template<class T>
 void List<T>::pushback(T elem){
-	Celda *cel;
+	Celda *cel = new Celda;
 	cel->elemento = elem;
 	cel->siguiente = 0;
 
 	ultima->siguiente = cel;
+	ultima = cel;
 }
 
 template<class T>
