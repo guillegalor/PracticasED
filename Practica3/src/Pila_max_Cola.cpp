@@ -10,13 +10,13 @@ void PilaMax<T>::poner(const T& t_elem){                // TODO Pensar en hacer 
     Elemento elem;                                      // Declaramos el Elemento que insertaremos en la cola
     elem.elem = t_elem;                                 // Establecemos el dato
 
-    if (t_elem > datos.tope().max)                      // Establemos el maximo comparandolo con el maximo anterior
+    if (t_elem > max())                      // Establemos el maximo comparandolo con el maximo anterior
       elem.max = t_elem;
     else
-      elem.max = datos.tope().max;
+      elem.max = max();
 
     aux.poner(elem);                                    // Introducimos el elemento en la cola auxiliar
-		
+
     while (datos.num_elementos() > 0) {                 // Insertamos cada uno de los elementos que contenia la cola original
       aux.poner(datos.frente());                        //  para mantener el orden
       datos.quitar();                                   // Al final del bucle la cola original se queda vacia

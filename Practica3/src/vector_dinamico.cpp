@@ -55,6 +55,11 @@ const T& VectorDinamico<T>::operator[](int i) const{
 	return datos[i];
 }
 
+/*
+En este caso en la funcion resize llevamos a cabo un borrado fisico del vector
+anterior y creamos un nuevo vector del tamaño especificado,en el que
+introducimos los elementos TODO Revisar descripcion Resize
+ */
 template<class T>
 void VectorDinamico<T>::resize(int n){
 	T *aux = new T[n];
@@ -106,5 +111,5 @@ void VectorDinamico<T>::popback(){
 
 template<class T>
 T VectorDinamico<T>::getLast(){
-	return datos[numelem];
+	return datos[numelem-1];
 }
