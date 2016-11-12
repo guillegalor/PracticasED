@@ -11,7 +11,7 @@
 #ifndef _PILA_MAX_H_
 #define _PILA_MAX_H_
 
-#define CUAL_COMPILO 2
+#define CUAL_COMPILO 3
 
 #if CUAL_COMPILO == 1
   #include "Pila_max_List.hpp"

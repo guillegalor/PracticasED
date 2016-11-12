@@ -12,7 +12,7 @@ int main(){
     p.poner(i);
 
   while (!p.vacia() ){
-    cout << "El elemento de arriba de la cola es: "<<p.tope()<<" y el maximo es: "<<p.max()<<endl;
+    cout << "El elemento de arriba de la pila max es: "<<p.tope()<<" y el maximo es: "<<p.max()<<endl;
     p.quitar();
   }
 
@@ -22,7 +22,7 @@ int main(){
     p.poner(i);
 
   while (!p.vacia() ){
-    cout << "El elemento de arriba de la cola es: "<<p.tope()<<" y el maximo es: "<<p.max()<<endl;
+    cout << "El elemento de arriba de la pila max es: "<<p.tope()<<" y el maximo es: "<<p.max()<<endl;
     p.quitar();
   }
 

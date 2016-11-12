@@ -12,7 +12,6 @@ class VectorDinamico{
 		// Constructores
 		VectorDinamico<T>(int n = 0);
 		VectorDinamico<T>(const VectorDinamico<T>& v);
-		~VectorDinamico<T>();
 		VectorDinamico<T>& operator=(const VectorDinamico& v);
 
 		// Operaciones
