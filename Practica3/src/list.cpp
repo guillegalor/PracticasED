@@ -45,7 +45,7 @@ List<T>& List<T>::operator=(const List& l){
 }
 
 template<class T>
-bool List<T>::vacia(){
+bool List<T>::vacia()const{
 	return (cab->siguiente == 0);
 }
 

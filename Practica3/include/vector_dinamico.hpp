@@ -25,7 +25,7 @@ class VectorDinamico{
 		void resize(int n);
 		void reserve(int n);
 
-		bool vacia(){return numelem == 0;}
+		bool vacia()const{return numelem == 0;}
 
 		void pushback(T elem);
 		void popback();

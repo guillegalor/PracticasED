@@ -30,7 +30,7 @@ class List{
 		~List();
 		List& operator=(const List& l);
 
-		bool vacia();
+		bool vacia()const;
 		void pushback(T elem);
 		void popback();
 		T& getLast();
