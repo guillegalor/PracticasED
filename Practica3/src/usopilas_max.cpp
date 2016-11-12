@@ -1,21 +1,30 @@
 #include <iostream>
-#include "pila_max.h"
+#include "Pila_max.hpp"
 
 using namespace std;
 
 int main(){
 
-  Pila_max p;
+  PilaMax<int> p;
   int i;
 
-  for ( i=10; i>=0 ; i--) 
+  for ( i=10; i>=0 ; i--)
     p.poner(i);
-  
+
   while (!p.vacia() ){
-    elemento x = p.tope();
-    cout << x<<endl;
+    cout << "El elemento de arriba de la cola es: "<<p.tope()<<" y el maximo es: "<<p.max()<<endl;
     p.quitar();
-  }     
-  
+  }
+
+  cout << "Segunda prueba: " <<endl;
+
+  for ( i=0; i<=10 ; i++)
+    p.poner(i);
+
+  while (!p.vacia() ){
+    cout << "El elemento de arriba de la cola es: "<<p.tope()<<" y el maximo es: "<<p.max()<<endl;
+    p.quitar();
+  }
+
   return 0;
 }
