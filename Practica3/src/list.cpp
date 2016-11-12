@@ -72,6 +72,11 @@ void List<T>::popback(){
 }
 
 template<class T>
-T List<T>::getLast(){
+T& List<T>::getLast(){
+	return ultima->elemento;
+}
+
+template<class T>
+const T& List<T>::getLast()const{
 	return ultima->elemento;
 }

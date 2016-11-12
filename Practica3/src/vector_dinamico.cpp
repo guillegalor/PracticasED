@@ -110,6 +110,11 @@ void VectorDinamico<T>::popback(){
 }
 
 template<class T>
-T VectorDinamico<T>::getLast(){
+T& VectorDinamico<T>::getLast(){
+	return datos[numelem-1];
+}
+
+template<class T>
+const T& VectorDinamico<T>::getLast()const{
 	return datos[numelem-1];
 }

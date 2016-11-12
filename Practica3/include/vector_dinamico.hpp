@@ -30,7 +30,8 @@ class VectorDinamico{
 		void pushback(T elem);
 		void popback();
 
-		T getLast();
+		T& getLast();
+		const T& getLast()const;
 
 };
 
