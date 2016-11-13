@@ -11,8 +11,9 @@
   *  @brief T.D.A. Pila_max_List
   *
   * Una instancia @e c del tipo de datos abstracto @c Pila_max_List es un objeto
-  * para agrupar datos de tipo Elemento, compuesto Elemento por dos objetos: elem y max, 
-  * amobos de tipo T. La clase está compuesta por una List de Elementos.
+  * para agrupar datos de tipo Elemento en una pila, compuesto Elemento por dos 
+  * objetos: elem y max, ambos de tipo T. La clase está compuesta por una List 
+  * de Elementos.
   *
   * @author J. Capote, G. Galindo y C. de la Torre
   * @date ONoviembre 2016
