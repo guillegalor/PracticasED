@@ -12,8 +12,9 @@
   *  @brief T.D.A. Pila_mx_Cola
   *
   * Una instancia @e c del tipo de datos abstracto @c Pila_max_Cola es un objeto
-  * para agrupar datos de tipo Elemento, compuesto Elemento por dos objetos: elem y max, 
-  * amobos de tipo T. La clase está compuesta por una Cola de Elementos.
+  * para agrupar datos de tipo Elemento en una Pila, compuesto Elemento por dos 
+  * objetos: elem y max,ambos de tipo T. La clase está compuesta por una Cola 
+  * de Elementos.
   *
   * @author J. Capote, G. Galindo y C. de la Torre
   * @date ONoviembre 2016
@@ -57,15 +58,14 @@ class PilaMax{
     */
     PilaMax<T>(){}
   /**
-    * @brief Constructor por defecto de la clase. Introduce en la Cola los
-    * elementos pasados.
-    * @param p datos que se introducirán en la Pila.
+    * @brief Constructor pcopia de la clase. 
+    * @param p objeto a copiar
     */
     PilaMax<T>(const PilaMax<T>& p):datos(p.datos){}
   
   /**
-    * @brief Operador =. Copia un objeto Pila_max_Cola en otro.
-    * @param p objeto a copiar.
+    * @brief Operador de asignacion.
+    * @param p objeto a asignar.
     */
     
     PilaMax<T>& operator=(const PilaMax<T>& p){
