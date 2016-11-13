@@ -27,6 +27,20 @@
 
 template<class T>
 class VectorDinamico{
+	/**
+		* @page repConjunto Rep del TDA VectorDinamico
+		*
+		* @section invConjunto Invariante de la representaci�n
+		*
+		* El invariante es que \e rep.numelem >= 0, rep.reservados >= rep.numelem
+		* y rep.datos se array con memoria para albergar rep.reservados elementos.
+		*
+		* @section faConjunto Funci�n de abstracci�n
+		*
+		* Un objeto v�lido @e rep del TDA List reprensenta a un conjunto de
+		* rep.numelem elementos del tipo template T consecutivos en memoria
+		*
+		*/
 	private:
 		T *datos; /**< Puntero a datos*/
 		int numelem; /**< Número de elementos del vector*/
@@ -108,7 +122,7 @@ class VectorDinamico{
 
 };
 
-#include "../src/vector_dinamico.cpp"
+#include "vector_dinamico.cpp"
 
 
 #endif

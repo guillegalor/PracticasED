@@ -15,7 +15,7 @@
  * una sucesi�n finita de elementos del mismo. En una Lista, las operaciones de inserci�n tienen
  * lugar en cualquier punto de la misma. Una lista de longitud @e n la denotamos
  * - <a1,a2,a3,..,an<
- * En esta lista, tendremos acceso a todos los elementos. 
+ * En esta lista, tendremos acceso a todos los elementos.
  *
  * Si n=0 diremos que la lista est� vac�a.
  *
@@ -29,6 +29,23 @@
 template<class T>
 class List{
 	private:
+		/**
+	    * @page repConjunto Rep del TDA List
+	    *
+	    * @section invConjunto Invariante de la representaci�n
+	    *
+	    * El invariante es \e rep.cab apunte a una celda vacia cuyo campo
+	    * siguiente apunte a la primera celda con un elemento válido y
+	    * \e rep.ultima apunte a la ultima celda con un elemento valido y el
+	    * campo siguiente apunte a "0"
+	    *
+	    * @section faConjunto Funci�n de abstracci�n
+	    *
+	    * Un objeto v�lido @e rep del TDA List reprensenta a un conjunto de
+	    * elementos del tipo template T siendo el primer elemento de la lista
+	    * rep.cab->siguiente->elemento y el ultimo rep.ultima->elemento
+	    *
+	    */
 	  struct Celda {
 	  	T elemento;        ///< Elemento de informaci�n.
 	    Celda *siguiente;  ///< Puntero al siguiente nodo.
@@ -70,7 +87,7 @@ class List{
 		List& operator=(const List& l);
 	/**
    	 * @brief Comprueba si la lista est� vac�a
-	 * @return devuelve un booleano 
+	 * @return devuelve un booleano
   	 */
 		bool vacia()const;
 	/**
@@ -92,6 +109,6 @@ class List{
 
 };
 
-#include "../src/list.cpp"
+#include "list.cpp"
 
 #endif

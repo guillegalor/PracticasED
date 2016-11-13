@@ -12,8 +12,8 @@
   *  @brief T.D.A. Pila_mx_Cola
   *
   * Una instancia @e c del tipo de datos abstracto @c Pila_max_Cola es un objeto
-  * para agrupar datos de tipo Elemento en una Pila, compuesto Elemento por dos 
-  * objetos: elem y max,ambos de tipo T. La clase está compuesta por una Cola 
+  * para agrupar datos de tipo Elemento en una Pila, compuesto Elemento por dos
+  * objetos: elem y max,ambos de tipo T. La clase está compuesta por una Cola
   * de Elementos.
   *
   * @author J. Capote, G. Galindo y C. de la Torre
@@ -21,6 +21,22 @@
   */
 template <class T>
 class PilaMax{
+	/**
+		* @page repConjunto Rep del TDA PilaMax
+		*
+		* @section invConjunto Invariante de la representaci�n
+		*
+		* El invariante es \e rep.datos sea una lista, un vector dinamico o una
+		* cola que cumpla su respectivo invariante de representacion, y que el tipo
+		* de dato T tenga definido un orden(operadores >, <, >=, <=)
+		*
+		* @section faConjunto Funci�n de abstracci�n
+		*
+		* Un objeto v�lido @e rep del TDA PilaMax representa a una estructura de
+		* datos de tipo T en la que unicamente se tiene accesso al ultimo elemento
+		* introducido y de la que conocemos el maximo.
+		*
+		*/
   private:
   /**
     * @page repConjunto Rep del TDA Pila_max_Cola
@@ -58,16 +74,16 @@ class PilaMax{
     */
     PilaMax<T>(){}
   /**
-    * @brief Constructor pcopia de la clase. 
+    * @brief Constructor pcopia de la clase.
     * @param p objeto a copiar
     */
     PilaMax<T>(const PilaMax<T>& p):datos(p.datos){}
-  
+
   /**
     * @brief Operador de asignacion.
     * @param p objeto a asignar.
     */
-    
+
     PilaMax<T>& operator=(const PilaMax<T>& p){
       datos = p.datos;
     }
@@ -82,7 +98,7 @@ class PilaMax{
      * @brief Añade un nuevo elemento a la cola de la pila
      * @param t_elem valor del nuevo elemento a añadir
      */
-  
+
     void poner(const T& t_elem);
     /**
      * @brief Elimina el útimo elemento de la pila
@@ -100,6 +116,6 @@ class PilaMax{
     T max() const{return datos.frente().max;}
 };
 
-#include "../src/Pila_max_Cola.cpp"
+#include "Pila_max_Cola.cpp"
 
 #endif

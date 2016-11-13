@@ -11,8 +11,8 @@
   *  @brief T.D.A. Pila_max_List
   *
   * Una instancia @e c del tipo de datos abstracto @c Pila_max_List es un objeto
-  * para agrupar datos de tipo Elemento en una pila, compuesto Elemento por dos 
-  * objetos: elem y max, ambos de tipo T. La clase está compuesta por una List 
+  * para agrupar datos de tipo Elemento en una pila, compuesto Elemento por dos
+  * objetos: elem y max, ambos de tipo T. La clase está compuesta por una List
   * de Elementos.
   *
   * @author J. Capote, G. Galindo y C. de la Torre
@@ -20,6 +20,18 @@
   */
 template <class T>
 class PilaMax{
+	/**
+		* @page repConjunto Rep del TDA PilaMax
+		*
+		* @section invConjunto Invariante de la representaci�n
+		*
+		* Mismo que en Pila_max_Cola.hpp
+		*
+		* @section faConjunto Funci�n de abstracci�n
+		*
+		* Misma que en Pila_max_Cola.hpp
+		*
+		*/
   private:
     /**
     * @page repConjunto Rep del TDA Pila_max_List
@@ -92,7 +104,7 @@ class PilaMax{
     T max() const{return datos.getLast().max;}
 };
 
-#include "../src/Pila_max_List.cpp" // TODO Modificar includes
+#include "Pila_max_List.cpp"
 
 
 #endif

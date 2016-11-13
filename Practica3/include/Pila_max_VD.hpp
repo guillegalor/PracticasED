@@ -10,7 +10,7 @@
   *  @brief T.D.A. Pila_mx_VD
   *
   * Una instancia @e c del tipo de datos abstracto @c Pila_max_VD es un objeto
-  * para agrupar datos de tipo Elemento en una Pila, compuesto Elemento por dos 
+  * para agrupar datos de tipo Elemento en una Pila, compuesto Elemento por dos
   * objetos: elem y max,ambos de tipo T. La clase está compuesta por uN vector dinamico
   * de Elementos.
   *
@@ -19,6 +19,18 @@
   */
 template <class T>
 class PilaMax{
+	/**
+		* @page repConjunto Rep del TDA PilaMax
+		*
+		* @section invConjunto Invariante de la representaci�n
+		*
+		* Mismo que en Pila_max_Cola.hpp
+		*
+		* @section faConjunto Funci�n de abstracci�n
+		*
+		* Misma que en Pila_max_Cola.hpp
+		*
+		*/
   private:
    /**
     * @page repConjunto Rep del TDA Pila_max_VD
@@ -55,7 +67,7 @@ class PilaMax{
     */
     PilaMax<T>(){}
     /**
-    * @brief Constructor copia de la clase. 
+    * @brief Constructor copia de la clase.
     * @param p objeto a copiar
     */
     PilaMax<T>(const PilaMax<T>& p):datos(p.datos){}
@@ -90,7 +102,7 @@ class PilaMax{
     T max() const{return datos.getLast().max;}
 };
 
-#include "../src/Pila_max_VD.cpp"
+#include "Pila_max_VD.cpp"
 
 
 #endif
