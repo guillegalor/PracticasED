@@ -1,7 +1,5 @@
 #include <cassert>
 
-// TODO Poner asserts
-
 /*
 Constructores
  */
@@ -11,7 +9,7 @@ VectorDinamico<T>::VectorDinamico(int n):numelem(0), reservados(n){
 }
 
 template<class T>
-VectorDinamico<T>::VectorDinamico(const VectorDinamico<T>& v){									// TODO Preguntar si mantener tambien la capacidad o no
+VectorDinamico<T>::VectorDinamico(const VectorDinamico<T>& v){
 	this->datos = new T[v.capacity()];
 
 	for (int i = 0; i < v.size(); i++) {
@@ -22,7 +20,7 @@ VectorDinamico<T>::VectorDinamico(const VectorDinamico<T>& v){									// TODO P
 	reservados = v.reservados;
 }
 
-// ~VectorDinamico<T>(){}																												// TODO Es necesario el destructor?
+// ~VectorDinamico<T>(){}
 template<class T>
 VectorDinamico<T>&  VectorDinamico<T>::operator=(const VectorDinamico& v){
 	VectorDinamico<T> aux(v);
@@ -58,7 +56,7 @@ const T& VectorDinamico<T>::operator[](int i) const{
 /*
 En este caso en la funcion resize llevamos a cabo un borrado fisico del vector
 anterior y creamos un nuevo vector del tamaño especificado,en el que
-introducimos los elementos TODO Revisar descripcion Resize
+introducimos los elementos
  */
 template<class T>
 void VectorDinamico<T>::resize(int n){
