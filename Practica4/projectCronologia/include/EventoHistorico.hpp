@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <vector>
+#include <set>
 
 struct Fecha{
   int anio;
@@ -58,15 +59,15 @@ private:
     * el año rep.f.anio
     *
     */
-  Fecha f;  /**< Año */
-  std::vector<Acontecimiento> evento;  /**< Acontecimientos */
+
+	std::pair<Fecha, std::set<Acontecimiento> > evento;
 
   /**
    * @brief Busca un acontecimiento determinado en el vector de acontecimientos
    * @param a Acontecimiento a buscar
    * @return Posicion del elemento buscado si se encuentra o una posicion no valida si no lo encuenta
    */
-  std::vector<Acontecimiento>::iterator busquedaAcontecimiento(Acontecimiento a);
+  std::set<Acontecimiento>::iterator busquedaAcontecimiento(Acontecimiento a);
 
 public:
 
@@ -89,19 +90,19 @@ public:
     * @param v Evento del EventoHistorico a construir
     * @return Crea el EventoHistorico con fecha f y los acontecmientos contenidos en v
     */
-  EventoHistorico(Fecha f, std::vector<Acontecimiento> v);
+  EventoHistorico(Fecha f, std::set<Acontecimiento> s);
 
   /**
     * @brief Fecha
     * @return Devuelve la fecha del EventoHistorico
     */
-  Fecha getFecha() const{return f;}
+  Fecha getFecha() const{return evento.first;}
 
   /**
     * @brief Evento
     * @return Devuelve el vector de acontecmientos del EventoHistorico
     */
-  std::vector<Acontecimiento> getEvento() const{return evento;};
+  std::set<Acontecimiento> getEvento() const{return evento.second;};
 
   /**
     * @brief Asignación de una Fecha
@@ -115,7 +116,7 @@ public:
     * @param v vector de acontecimientos del EventoHistorico a asignar
     * @return Asigna al objeto impl�cito el vector de acontecimientos v
     */
-  void setEvento(std::vector<Acontecimiento> v);
+  void setEvento(std::set<Acontecimiento> s);
 
   /**
     * @brief Añadir un acontecimiento a evento, comprobando que no este ya incluido
@@ -129,7 +130,7 @@ public:
     * @param evento conjunto de acontecimientos a añadir
     * @return Añade al vector this->evento los acontecimientos de evento
     */
-  void addEvento(std::vector<Acontecimiento> evento);
+  void addEvento(std::set<Acontecimiento> evento);
 
   /**
     * @brief Añadir un conjunto acontecimientos de otro evento al evento, comprobando que no esten ya incluidos
@@ -151,14 +152,14 @@ public:
     * @param key clave que deben contener los acontecimientos a eliminar
     * @return Numero de elementos eliminados
     */
-  int eliminar(std::string key);
+  int eliminar(const std::string key);
 
   /**
     * @brief Busca acontecimientos que contengan la clave "key"
     * @param key string que debe contener los acontecimientos buscados
     * @return Vector de acontecimientos con todos los encontrados en la busqueda
     */
-  std::vector<Acontecimiento> buscar(std::string key) const;
+  std::set<Acontecimiento> buscar(const std::string key) const;
 
   /**
     * @brief Salida de un EventoHistorico a ostream
