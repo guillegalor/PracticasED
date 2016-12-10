@@ -1,5 +1,5 @@
-template<class T>                                       // TODO Revisar nomenclatura
-void PilaMax<T>::poner(const T& t_elem){                // TODO Pensar en hacer esto más eficiente
+template<class T>
+void PilaMax<T>::poner(const T& t_elem){
 
   if (datos.num_elementos() == 0) {                     // Comprobamos que la lista no este vacia
     Elemento elem(t_elem, t_elem);
