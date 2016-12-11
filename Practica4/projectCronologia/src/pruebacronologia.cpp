@@ -38,6 +38,9 @@ int main(int argc, char * argv[]){
    std::cout << "Introduzca una fecha para añadir un nuevo evento a nuestra cronologia: " << std::endl;
    std::cin >> anio;
 
+	 char a[1];
+	 std::cin.read(a,1);
+
    EventoHistorico nuevo_evento;
    int entero;
 
@@ -47,7 +50,7 @@ int main(int argc, char * argv[]){
 
    do{
      std::cout << "Intrduzca un acontecimiento para añadirlo a nuestro nuevo evento: " << std::endl;
-     std::cin >> mi_acontecimiento;
+     getline( std::cin, mi_acontecimiento);
 
      nuevo_evento.addEvento(mi_acontecimiento);
 

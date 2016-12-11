@@ -4,8 +4,8 @@
 1936#1#Turing machine, an abstract machine developed by Alan Turing, with others developed the modern notion of algorithm.
 1942#1#A Fast Fourier Transform algorithm developed by G.C. Danielson and Cornelius Lanczos
 1945#1#Merge sort developed by John von Neumann
-1947#1#Simplex algorithm developed by George Dantzig
 1952#1#Huffman coding developed by David A. Huffman
+1947#1#Simplex algorithm developed by George Dantzig
 1953#1#Simulated annealing introduced by Nicholas Metropolis
 1954#1#Radix sort computer algorithm developed by Harold H. Seward
 1956#1#Kruskal's algorithm developed by Joseph Kruskal
