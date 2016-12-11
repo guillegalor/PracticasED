@@ -100,7 +100,7 @@ Iterators & more
  EventoHistorico::const_iterator EventoHistorico::cend()const{
 	 return evento.second.cend();
  }
- 
+
 /*
 Set y get
  */
@@ -203,7 +203,7 @@ std::istream& EventoHistorico::leerEvento(std::istream& is){
   std::string a;
 
   std::getline(is, a, '#');
-  evento.first.anio= std::stoi(a);
+  evento.first.anio= std::stol(a);
 
   std::getline(is, a, '#');
   evento.first.dc= std::stoi(a);
