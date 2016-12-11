@@ -122,6 +122,8 @@ class Cronologia{
       * @return Añade al objeto un vector de EventoHistoricoS
       */
     void addEventoHistorico(std::map<Fecha, EventoHistorico, FechaComp> v);
+
+    void unionCronologia(Cronologia a);
     /**
       * @brief Devuelve el primer año de la cronología
       * @return Devuelve el año en el que comienza la cronología

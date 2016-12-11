@@ -7,7 +7,7 @@ CXXFLAGS = -Wall -Wextra -std=c++11 -pedantic -g -I$(INC)
 
 
 
-all: main pruebacronologia
+all: main pruebacronologia unioncronologia
 
 main:$(OBJ)/main.o $(OBJ)/EventoHistorico.o
 	$(CXX) $(CXXFLAGS) -o $(BIN)/main $(OBJ)/main.o $(OBJ)/EventoHistorico.o
@@ -15,9 +15,14 @@ main:$(OBJ)/main.o $(OBJ)/EventoHistorico.o
 pruebacronologia: $(OBJ)/pruebacronologia.o $(OBJ)/Cronologia.o
 	$(CXX) $(CXXFLAGS) -o $(BIN)/pruebacronologia $(OBJ)/pruebacronologia.o $(OBJ)/Cronologia.o $(OBJ)/EventoHistorico.o
 
+unioncronologia: $(OBJ)/unioncronologia.o $(OBJ)/Cronologia.o
+	$(CXX) $(CXXFLAGS) -o $(BIN)/unioncronologia $(OBJ)/unioncronologia.o $(OBJ)/Cronologia.o $(OBJ)/EventoHistorico.o
 # ************ Compilación de módulos ************
 $(OBJ)/pruebacronologia.o: $(SRC)/pruebacronologia.cpp $(INC)/Cronologia.hpp
 	$(CXX) $(CXXFLAGS) -c -o $(OBJ)/pruebacronologia.o $(SRC)/pruebacronologia.cpp
+
+$(OBJ)/unioncronologia.o: $(SRC)/unioncronologia.cpp $(INC)/Cronologia.hpp
+	$(CXX) $(CXXFLAGS) -c -o $(OBJ)/unioncronologia.o $(SRC)/unioncronologia.cpp
 
 $(OBJ)/Cronologia.o: $(SRC)/Cronologia.cpp $(INC)/Cronologia.hpp $(INC)/EventoHistorico.hpp
 	$(CXX) $(CXXFLAGS) -c -o $(OBJ)/Cronologia.o $(SRC)/Cronologia.cpp

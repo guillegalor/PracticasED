@@ -141,6 +141,10 @@ void Cronologia::addEventoHistorico(std::map<Fecha, EventoHistorico, FechaComp> 
     addEventoHistorico(*p);
 }
 
+void Cronologia::unionCronologia(Cronologia a){
+  addEventoHistorico(a.eventos);
+}
+
 Fecha Cronologia::getPrimerAnio()const{
   return cbegin()->first;
 }
