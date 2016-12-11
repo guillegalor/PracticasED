@@ -7,7 +7,7 @@ CXXFLAGS = -Wall -Wextra -std=c++11 -pedantic -g -I$(INC)
 
 
 
-all: main 
+all: main pruebacronologia
 
 main:$(OBJ)/main.o $(OBJ)/EventoHistorico.o
 	$(CXX) $(CXXFLAGS) -o $(BIN)/main $(OBJ)/main.o $(OBJ)/EventoHistorico.o
