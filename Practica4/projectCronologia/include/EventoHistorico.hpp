@@ -77,6 +77,14 @@ private:
 
 public:
 
+	// TODO Documentar iteradores
+	typedef typename std::set<Acontecimiento>::iterator iterator;
+	typedef typename std::set<Acontecimiento>::const_iterator const_iterator;
+
+	EventoHistorico::iterator begin();
+	EventoHistorico::const_iterator cbegin()const;
+	EventoHistorico::iterator end();
+	EventoHistorico::const_iterator cend()const;
   /**
     * @brief Constructor por defecto de la clase. Crea el evento con el año -1
     * y el vector de acontecimientos vacio.

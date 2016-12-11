@@ -1,4 +1,4 @@
-#include "EventoHistorico.hpp"
+#include "../include/EventoHistorico.hpp"
 #include <sstream>
 #include <cassert>
 
@@ -20,7 +20,7 @@ Fecha::Fecha(int f){
 Operadores Fecha
  */
 
-bool Fecha::operator<(Fecha f){
+bool Fecha::operator<(Fecha f) const{
   bool rta;
   if (dc == 1) {
     if (f.dc == 0)
@@ -37,7 +37,7 @@ bool Fecha::operator<(Fecha f){
   return rta;
 }
 
-bool Fecha::operator>(Fecha f){
+bool Fecha::operator>(Fecha f) const{
   bool rta;
   if (dc == 1) {
     if (f.dc == 0)
@@ -54,15 +54,15 @@ bool Fecha::operator>(Fecha f){
   return rta;
 }
 
-bool Fecha::operator==(Fecha f){
+bool Fecha::operator==(Fecha f) const{
   return ((anio == f.anio) && (dc == f.dc));
 }
 
-bool Fecha::operator<=(Fecha f){
+bool Fecha::operator<=(Fecha f) const{
   return (*this < f) || (*this == f);
 }
 
-bool Fecha::operator>=(Fecha f){
+bool Fecha::operator>=(Fecha f) const{
   return (*this > f) || (*this == f);
 }
 
@@ -84,6 +84,23 @@ EventoHistorico::EventoHistorico(Fecha f, std::set<Acontecimiento> s){
   evento.second = s;
 }
 
+/*
+Iterators & more
+ */
+
+ EventoHistorico::iterator EventoHistorico::begin(){
+	 return evento.second.begin();
+ }
+ EventoHistorico::const_iterator EventoHistorico::cbegin()const{
+	 return evento.second.cbegin();
+ }
+ EventoHistorico::iterator EventoHistorico::end(){
+	 return evento.second.end();
+ }
+ EventoHistorico::const_iterator EventoHistorico::cend()const{
+	 return evento.second.cend();
+ }
+ 
 /*
 Set y get
  */
