@@ -40,7 +40,7 @@ class Cronologia{
 		  * de EventoHistoricos ordenado
 		  *
 		  */
-    std::map<Fecha,EventoHistorico> eventos; /**< Eventos historicos */
+    std::map<Fecha, EventoHistorico, FechaComp> eventos; /**< Eventos historicos */
 
     /**
       * @brief Inserta un EventoHistorico en eventos de manera ordenada
@@ -53,14 +53,28 @@ class Cronologia{
       * @param f Fecha del EventoHistorico a buscar
       * @return posicion en el vector del EventoHistorico buscado
       */
-    std::map<Fecha, EventoHistorico>::iterator getPos(Fecha f);
+		void insertaEvento(std::pair<Fecha, EventoHistorico> par); //TODO Documentar
+
+		std::map<Fecha, EventoHistorico>::iterator getPos(Fecha f);
     /**
       * @brief Busca la posicion de un EventoHistorico en el vector(Metodo constante)
       * @param f Fecha del EventoHistorico a buscar
       * @return posicion en el vector del EventoHistorico buscado
       */
-    std::map<Fecha, EventoHistorico>::iterator getPos(Fecha f)const;
+    std::map<Fecha, EventoHistorico>::const_iterator getPos(Fecha f)const;
   public:
+
+		// TODO Documentar iteradores
+
+		typedef typename std::map<Fecha, EventoHistorico>::iterator iterator;
+		typedef typename std::map<Fecha, EventoHistorico>::const_iterator const_iterator;
+
+		Cronologia::iterator begin();
+		Cronologia::iterator end();
+		Cronologia::const_iterator cbegin() const;
+		Cronologia::const_iterator cend() const;
+
+
     /**
       * @brief Constructor por defecto de la clase. Crea la Cronologia vacía.
       */
@@ -76,7 +90,9 @@ class Cronologia{
       * @param v vector de EventoHistoricoS con los que crear la clase
       * @return Crea la Cronologia a partir de un vector de EventoHistoricos
       */
-    Cronologia(std::map<Fecha, EventoHistorico> v);
+    Cronologia(std::map<Fecha, EventoHistorico, FechaComp> v);
+
+		Cronologia(const Cronologia& crono);
 
     /**
       * @brief devolver los eventos de la Cronologia
@@ -92,19 +108,20 @@ class Cronologia{
       * @return Reemplaza los eventos de la cronologia por los de
       * v
       */
-    void setEventoHistorico(std::map<Fecha, EventoHistorico> v);
+    void setEventoHistorico(std::map<Fecha, EventoHistorico, FechaComp> v);
     /**
       * @brief Añadir un EventoHistorico en caso de que no este repetido
       * @param a EventoHistorico a añadir
       * @return Añade al objeto un EventoHistorico
       */
     void addEventoHistorico(EventoHistorico a);
+		void addEventoHistorico(std::pair<Fecha, EventoHistorico> a);
     /**
       * @brief Añadir unvector de EventoHistoricoS
       * @param v vector de EventoHistoricoS a añadir
       * @return Añade al objeto un vector de EventoHistoricoS
       */
-    void addEventoHistorico(std::map<Fecha, EventoHistorico> v);
+    void addEventoHistorico(std::map<Fecha, EventoHistorico, FechaComp> v);
     /**
       * @brief Devuelve el primer año de la cronología
       * @return Devuelve el año en el que comienza la cronología
@@ -135,13 +152,13 @@ class Cronologia{
      * @return devuelve un vector con los eventos de los eventos
      * pertenecientes a la cronologia restringida al intervalo f-l
      */
-    std::map<Fecha, EventoHistorico> restringir(Fecha f, Fecha l)const;
+    Cronologia restringir(Fecha f, Fecha l)const;
     /**
      * @brief Busca EventoHistorico con una determinada palabra
      * @param key palabra que debe contener los acontecimientos buscados
      * @return devuelve un vector de eventos en cuyos acontecimientos aparece "key"
      */
-    std::map<Fecha, EventoHistorico> buscar(std::string key)const;
+    Cronologia buscar(std::string key)const;
     /**
       * @brief Entrada de una cronología desde el flujo de entrada istream
       * @param is stream de entrada

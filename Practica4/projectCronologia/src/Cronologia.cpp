@@ -111,15 +111,17 @@ Cronologia::Cronologia(EventoHistorico evento){
   insertaEvento(evento);
 }
 
-Cronologia::Cronologia(std::map<Fecha, EventoHistorico> m){
+Cronologia::Cronologia(std::map<Fecha, EventoHistorico, FechaComp> m){
   setEventoHistorico(m);
 }
+
+Cronologia::Cronologia(const Cronologia& crono):Cronologia(crono.eventos){}
 
 /*
 Set&Get
  */
 
-void Cronologia::setEventoHistorico(std::map<Fecha, EventoHistorico> m){
+void Cronologia::setEventoHistorico(std::map<Fecha, EventoHistorico, FechaComp> m){
   eventos.clear();
 
   for (std::map<Fecha, EventoHistorico>::iterator p = m.begin(); p != m.end() ; ++p)
@@ -134,7 +136,7 @@ void Cronologia::addEventoHistorico(std::pair<Fecha, EventoHistorico> a){
   insertaEvento(a);
 }
 
-void Cronologia::addEventoHistorico(std::map<Fecha, EventoHistorico> m){
+void Cronologia::addEventoHistorico(std::map<Fecha, EventoHistorico, FechaComp> m){
   for (std::map<Fecha, EventoHistorico>::iterator p = m.begin(); p != m.end() ; ++p)
     addEventoHistorico(*p);
 }
@@ -171,9 +173,9 @@ bool Cronologia::eliminarEventoAnio(Fecha f){
   return eliminado;
 }
 
-std::map<Fecha, EventoHistorico> Cronologia::restringir(Fecha f, Fecha l)const{
+Cronologia Cronologia::restringir(Fecha f, Fecha l)const{
 
-	std::map<Fecha, EventoHistorico> copia(eventos);
+	std::map<Fecha, EventoHistorico, FechaComp> copia(eventos);
 
 	const_iterator inicio = copia.begin();
   const_iterator final = std::prev(copia.end());
@@ -188,18 +190,9 @@ std::map<Fecha, EventoHistorico> Cronologia::restringir(Fecha f, Fecha l)const{
 	copia.erase(copia.begin(), inicio);
 	copia.erase(final, copia.end());
 
-	return copia;
+	Cronologia crono(copia);
 
-	/*
-  std::vector<EventoHistorico> v;
-
-  for (std::vector<EventoHistorico>::const_iterator p = inicio; p != final; ++p)
-    v.push_back(*p);
-
-  v.push_back(*final);
-
-  return v;
-	*/
+	return crono;
 }
 
 Cronologia Cronologia::buscar(std::string key)const{

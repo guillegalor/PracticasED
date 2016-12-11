@@ -18,11 +18,17 @@ struct Fecha{
   Fecha();
   Fecha(int f);
 
-  bool operator<(Fecha f);
-  bool operator>(Fecha f);
-  bool operator==(Fecha f);
-  bool operator<=(Fecha f);
-  bool operator>=(Fecha f);
+  bool operator<(Fecha f) const;
+  bool operator>(Fecha f) const;
+  bool operator==(Fecha f) const;
+  bool operator<=(Fecha f) const;
+  bool operator>=(Fecha f) const;
+};
+
+struct FechaComp{
+	bool operator() (const Fecha& f1, const Fecha& f2){
+		return f1 < f2;
+	}
 };
 
 typedef std::string Acontecimiento;
