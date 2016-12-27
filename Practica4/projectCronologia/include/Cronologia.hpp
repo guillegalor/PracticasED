@@ -53,7 +53,7 @@ class Cronologia{
       * @param f Fecha del EventoHistorico a buscar
       * @return posicion en el vector del EventoHistorico buscado
       */
-		void insertaEvento(std::pair<Fecha, EventoHistorico> par); //TODO Documentar
+		void insertaEvento(std::pair<Fecha, EventoHistorico> par);
 
 		std::map<Fecha, EventoHistorico>::iterator getPos(Fecha f);
     /**
@@ -63,8 +63,6 @@ class Cronologia{
       */
     std::map<Fecha, EventoHistorico>::const_iterator getPos(Fecha f)const;
   public:
-
-		// TODO Documentar iteradores
 
 		typedef typename std::map<Fecha, EventoHistorico>::iterator iterator;
 		typedef typename std::map<Fecha, EventoHistorico>::const_iterator const_iterator;
@@ -94,12 +92,6 @@ class Cronologia{
 
 		Cronologia(const Cronologia& crono);
 
-    /**
-      * @brief devolver los eventos de la Cronologia
-      * @return devuelve un vector con todos los EventoHistoricoS de la Cronologia
-      */
-
-    // std::vector<EventoHistorico> getEventos()const {return eventos;} TODO Pensar si este metodo es necesario o no
 
     /**
       * @brief Reemplaza los eventos de la cronologia por los de

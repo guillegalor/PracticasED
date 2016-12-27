@@ -1,0 +1,20 @@
+#include "../include/jugadorauto.h"
+
+
+  JugadorAuto::JugadorAuto(){}
+
+  JugadorAuto::JugadorAuto(const Tablero &t){
+
+  }
+
+  void JugadorAuto::Calcular(const Tablero t){
+    arbol.AsignaRaiz(t);
+
+    for(int i=0; i< t.GetColumnas(); i++ ){
+
+    }
+  }
+
+  void JugadorAuto::Actualizar(const Tablero){
+
+  }

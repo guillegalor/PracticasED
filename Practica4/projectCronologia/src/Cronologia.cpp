@@ -5,7 +5,6 @@
 Private
  */
 
-// TODO Pensar para el resto del programa si acceder a una fecha como p->first o como p->second.getFecha()
 
 void Cronologia::insertaEvento(EventoHistorico v){
 
@@ -14,13 +13,13 @@ void Cronologia::insertaEvento(EventoHistorico v){
   else{
     bool insertado = false;
 
-    for (iterator p = begin(); p != end() && !insertado; ++p){	//TODO Modificar despues de definir los iteradores de la clase
+    for (iterator p = begin(); p != end() && !insertado; ++p){
 			if (p->first == v.getFecha()) {
         (p->second).addEvento(v);
         insertado = true;
       }
       else if (p->first > v.getFecha()) {
-        eventos.insert(std::pair<Fecha,EventoHistorico>(v.getFecha(), v));	// TODO Realizar comparador para insertar
+        eventos.insert(std::pair<Fecha,EventoHistorico>(v.getFecha(), v));
         insertado = true;
       }
     }
@@ -36,13 +35,13 @@ void Cronologia::insertaEvento(std::pair<Fecha, EventoHistorico> par){
   else{
     bool insertado = false;
 
-    for (iterator p = begin(); p != end() && !insertado; ++p){	//TODO Modificar despues de definir los iteradores de la clase
+    for (iterator p = begin(); p != end() && !insertado; ++p){
 			if (p->first == par.first) {
         (p->second).addEvento(par.second);
         insertado = true;
       }
       else if (p->first > par.first) {
-        eventos.insert(par);	// TODO Realizar comparador para insertar
+        eventos.insert(par);	
         insertado = true;
       }
     }
