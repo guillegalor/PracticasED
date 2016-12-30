@@ -56,6 +56,7 @@ void JugadorAuto::rellenarNodo(ArbolGeneral<Tablero>::Nodo n){
 		Tablero tablero(n->etiqueta);
 
 		if (tablero.colocarFicha(i)) {
+			tablero.cambiarTurno();
 			hijo.AsignaRaiz(tablero);
 
 			if (!arbol.hijomasizquierda(n)){
