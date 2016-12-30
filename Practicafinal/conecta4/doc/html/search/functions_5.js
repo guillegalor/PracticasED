@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['getarbol',['GetArbol',['../classJugadorAuto.html#a74531aa932becde453fe8667f6455413',1,'JugadorAuto']]],
   ['getbase',['GetBase',['../classMando.html#abcc813b0881e56ed976eea2ce6b7fd12',1,'Mando']]],
   ['getcolumnas',['GetColumnas',['../classTablero.html#a3cc99292123bdc0c33fcede9ce79e1bf',1,'Tablero']]],
   ['getfilas',['GetFilas',['../classTablero.html#ae8807f83521eb77c8e7b762f9122f51a',1,'Tablero']]],
