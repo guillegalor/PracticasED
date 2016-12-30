@@ -4,11 +4,13 @@
 
 #include "ArbolGeneral.h"
 #include "tablero.h"
+#include <cassert>
+
 
 class JugadorAuto{
 
 private:
-  ArbolGeneral <Tablero> arbol;
+  ArbolGeneral<Tablero> arbol;
 
 public:
 
@@ -16,8 +18,13 @@ public:
 
   JugadorAuto(const Tablero &t);
 
-  void Calcular(const Tablero t);
+  ArbolGeneral<Tablero>  Calcular(const Tablero t);
 
-  void Actualizar(const Tablero);
+  bool InsertarTablero(const Tablero t,int pos, ArbolGeneral<Tablero> arbol);
+
+  ArbolGeneral<Tablero> GetArbol();
+
+  void CalcularPrimeraFila(const Tablero t);
+
 }
 #endif
