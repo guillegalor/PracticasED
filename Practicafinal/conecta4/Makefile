@@ -23,11 +23,14 @@ $(BIN)/arboltablero_test: $(OBJ)/arboltablero_test.o $(LIB)/libtablero.a
 $(BIN)/conecta4: $(OBJ)/conecta4.o $(LIB)/libtablero.a $(LIB)/libmando.a
 	$(CXX) -o $(BIN)/conecta4 $(OBJ)/conecta4.o -I$(INC) -L$(LIB) -ltablero -lmando
 
-$(BIN)/main: $(OBJ)/main.o $(LIB)/libtablero.a
-	$(CXX) -o $(BIN)/main $(OBJ)/main.o -I$(INC) -L$(LIB) -ltablero
+$(BIN)/main: $(OBJ)/main.o $(LIB)/libtablero.a $(LIB)/libmando.a $(LIB)/libJugadorAuto.a
+	$(CXX) -o $(BIN)/main $(OBJ)/main.o -I$(INC) -L$(LIB) -ltablero -lmando -lJugadorAuto
 
 $(OBJ)/conecta4.o: $(SRC)/conecta4.cpp
 	$(CXX) $(CPPFLAGS)  -o $(OBJ)/conecta4.o $(SRC)/conecta4.cpp -I$(INC)
+
+$(OBJ)/main.o: $(SRC)/main.cpp
+	$(CXX) $(CPPFLAGS)  -o $(OBJ)/main.o $(SRC)/main.cpp -I$(INC)
 
 $(LIB)/libtablero.a: $(OBJ)/tablero.o
 	$(AR) $(LIB)/libtablero.a $(OBJ)/tablero.o
@@ -35,17 +38,20 @@ $(LIB)/libtablero.a: $(OBJ)/tablero.o
 $(LIB)/libmando.a: $(OBJ)/mando.o
 	$(AR)  $(LIB)/libmando.a $(OBJ)/mando.o
 
+$(LIB)/libJugadorAuto.a: $(OBJ)/JugadorAuto.o
+	$(AR)  $(LIB)/libJugadorAuto.a $(OBJ)/JugadorAuto.o
+
 $(OBJ)/tablero.o: $(SRC)/tablero.cpp $(INC)/tablero.h
 	$(CXX) $(CPPFLAGS)  -o $(OBJ)/tablero.o $(SRC)/tablero.cpp -I$(INC)
 
 $(OBJ)/arboltablero_test.o: $(SRC)/arboltablero_test.cpp $(INC)/tablero.h
 	$(CXX) $(CPPFLAGS)  -o $(OBJ)/arboltablero_test.o $(SRC)/arboltablero_test.cpp -I$(INC)
 
-$(OBJ)/main.o: $(SRC)/main.cpp $(INC)/jugadorauto.h $(INC)/tablero.h
-	$(CXX) $(CPPFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp -I$(INC)
-
 $(OBJ)/mando.o: $(SRC)/mando.cpp $(INC)/mando.h $(INC)/tablero.h
 	$(CXX) $(CPPFLAGS)  -o $(OBJ)/mando.o $(SRC)/mando.cpp -I$(INC)
+
+$(OBJ)/JugadorAuto.o: $(SRC)/JugadorAuto.cpp $(INC)/JugadorAuto.hpp $(INC)/tablero.h
+	$(CXX) $(CPPFLAGS)  -o $(OBJ)/JugadorAuto.o $(SRC)/JugadorAuto.cpp -I$(INC)
 
 # ************ Limpieza ************
 clean :

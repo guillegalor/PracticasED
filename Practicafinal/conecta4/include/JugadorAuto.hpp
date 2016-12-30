@@ -2,7 +2,7 @@
 #define __CONECTA4_H__
 
 
-#include "ArbolGeneral.h"
+#include "ArbolGeneral.hpp"
 #include "tablero.h"
 #include <cassert>
 
@@ -10,9 +10,7 @@
 class JugadorAuto{
 	private:
   	ArbolGeneral<Tablero> arbol;
-		const int max_profundidad = 5;
 
-		void rellenarArbol();
 		void rellenarNodo(ArbolGeneral<Tablero>::Nodo n);
 
 	public:
@@ -30,7 +28,7 @@ class JugadorAuto{
 
 
 		ArbolGeneral<Tablero> GetArbol();
-
+		void rellenarArbol(int max_profundidad);
 };
 
 #endif

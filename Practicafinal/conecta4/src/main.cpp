@@ -1,19 +1,32 @@
-#include "../include/jugadorauto.h"
-#include <iostream>
-#include <string>
+#include "JugadorAuto.hpp"
+#include "ArbolGeneral.hpp"
+#include "tablero.h"
+#include "mando.h"
 
-using namespace std;
+#include <iostream>
+#include <vector>
+#include <ctime>
+#include <cstdlib>
+#include <stdio.h>
+#include <unistd.h>
+#include <termio.h>
+
+void imprimeTablero(Tablero &t, Mando &m){
+    cout << m.GetJugador() << endl;
+    cout << t ;
+    cout << m.GetBase() << endl;
+    cout << m.GetMando() << endl;
+}
 
 int main(int argc, char const *argv[]) {
-  JugadorAuto nuevo;
-  Tablero mitab;
-  nuevo.CalcularPrimeraFila(mitab);
+	Tablero tablero(5,7);
+	JugadorAuto j1(tablero);
+	Mando mando(tablero);
 
-  ArbolGeneral<Tablero> arbol;
-  arbol = nuevo.GetArbol();
+	j1.rellenarArbol(1);
 
-  arbol.recorrer_preorden();
+	tablero = j1.GetArbol().etiqueta(j1.GetArbol().raiz());
 
+	imprimeTablero(tablero, mando);
 
-  return 0;
 }

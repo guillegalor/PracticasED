@@ -1,8 +1,6 @@
 #include "../include/JugadorAuto.hpp"
 
-JugadorAuto::JugadorAuto(const Tablero &t){
-	arbol.AsignaRaiz(t);
-}
+JugadorAuto::JugadorAuto(const Tablero &t): arbol(t){}
 
 /* TODO Pendiente de revision
 void JugadorAuto::CalcularPrimeraFila(const Tablero t){
@@ -72,9 +70,10 @@ void JugadorAuto::rellenarNodo(ArbolGeneral<Tablero>::Nodo n){
 
 }
 
-void JugadorAuto::rellenarArbol(){
+void JugadorAuto::rellenarArbol(int max_profundidad){
 	ArbolGeneral<Tablero>::Nodo altura_a_rellenar = arbol.raiz();
 	ArbolGeneral<Tablero>::Nodo aux = arbol.raiz();
+
 	for (int i = 0; i < max_profundidad; i++) {
 		do {
 			rellenarNodo(aux);

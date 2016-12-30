@@ -13,6 +13,8 @@ var searchData=
   ['recorrer_5freverse_5fpreorden_5fal_5freves',['recorrer_reverse_preorden_al_reves',['../classArbolGeneral.html#ad4b95219bb5b0cb512719edb1406fd71',1,'ArbolGeneral']]],
   ['recuperar_5farbol',['recuperar_arbol',['../classArbolGeneral.html#a5fd1c0acc26d4229042ecd9af6e3a24e',1,'ArbolGeneral']]],
   ['reflejado',['reflejado',['../classArbolGeneral.html#a9b498b5302c63aa8ad0cd847d77a6315',1,'ArbolGeneral']]],
+  ['rellenararbol',['rellenarArbol',['../classJugadorAuto.html#a0f1359fcde7d96c91471f1655dfb5bb8',1,'JugadorAuto']]],
+  ['rellenarnodo',['rellenarNodo',['../classJugadorAuto.html#ae90fa3f90f9f0357a1e04512e1352f80',1,'JugadorAuto']]],
   ['reserve',['reserve',['../classTablero.html#ac2a20883f540c4d010dafab236390cb3',1,'Tablero']]],
   ['reverse_5fpreorden_5fiterador',['reverse_preorden_iterador',['../classArbolGeneral_1_1reverse__preorden__iterador.html#a80a523317a7f93ef2359d16048d7bd7e',1,'ArbolGeneral::reverse_preorden_iterador::reverse_preorden_iterador()'],['../classArbolGeneral_1_1reverse__preorden__iterador.html#aab2e21080ac46472a8a5a572c3b79ca9',1,'ArbolGeneral::reverse_preorden_iterador::reverse_preorden_iterador(const Nodo &amp;n)'],['../classArbolGeneral_1_1reverse__preorden__iterador.html#a0fb07f7fb272f8257a912e1941d06f40',1,'ArbolGeneral::reverse_preorden_iterador::reverse_preorden_iterador(const reverse_preorden_iterador &amp;i)']]]
 ];
