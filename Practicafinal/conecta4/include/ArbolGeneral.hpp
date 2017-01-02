@@ -1220,6 +1220,7 @@ ArbolGeneral<Tbase>::ArbolGeneral (const ArbolGeneral<Tbase>& v){
         laraiz = 0;
     else                                            //Sino,
         copiar(laraiz, v.laraiz);                   // copiamos todo a partir de él.
+
 }
 
 template <class Tbase>

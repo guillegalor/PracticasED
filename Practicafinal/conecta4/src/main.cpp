@@ -23,10 +23,8 @@ int main(int argc, char const *argv[]) {
 	JugadorAuto j1(tablero);
 	Mando mando(tablero);
 
-	j1.rellenarArbol(1);
+	j1.rellenarArbol(3);
 
-	tablero = j1.GetArbol().etiqueta(j1.GetArbol().raiz());
-
-	imprimeTablero(tablero, mando);
+	j1.recorrerarbolpreorden();
 
 }

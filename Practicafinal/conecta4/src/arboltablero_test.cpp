@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/ArbolGeneral.h"
+#include "../include/ArbolGeneral.hpp"
 #include "../include/tablero.h"
 #include <string>
 

@@ -8,7 +8,7 @@
 #include <termio.h>     // Linux/Windows users
 //#include <termios.h>    // Mac OSX users
 
-#include "ArbolGeneral.h"
+#include "ArbolGeneral.hpp"
 #include "tablero.h"
 #include "mando.h"
 
@@ -66,10 +66,10 @@ int jugar_partida() {
     //mientras no haya ganador y no se pulse tecla de terminación
     while(c != Mando::KB_ESCAPE && quienGana == 0) {
         system("clear");
-        mando.actualizarJuego(c, tablero);  // actualiza tablero según comando c 
+        mando.actualizarJuego(c, tablero);  // actualiza tablero según comando c
         imprimeTablero(tablero, mando);     // muestra tablero y mando en pantalla
         quienGana = tablero.quienGana();    // hay ganador?
-        if(quienGana==0) c = getch();       // Capturamos la tecla pulsada.    
+        if(quienGana==0) c = getch();       // Capturamos la tecla pulsada.
     }
 
     return tablero.quienGana();
@@ -78,6 +78,4 @@ int jugar_partida() {
 int main(int argc, char *argv[]){
     int ganador = jugar_partida();
     cout << "Ha ganado el jugador " << ganador << endl;
-}  
-  
-  
+}
