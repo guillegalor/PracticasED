@@ -33,18 +33,26 @@ void JugadorAuto::rellenarNodo(ArbolGeneral<Tablero>::Nodo n){
 
 }
 
-void JugadorAuto::rellenarArbol(int max_profundidad){
-	ArbolGeneral<Tablero>::Nodo altura_a_rellenar = arbol.raiz();
-	ArbolGeneral<Tablero>::Nodo aux = arbol.raiz();
+void JugadorAuto::rellenarNodoProfundidad(ArbolGeneral<Tablero>::Nodo n, int max_profundidad){
+	// Si la profundidad es 0 o negativa salimos del programa
+	if (max_profundidad < 1) {
+		printf("Profundidad no valida(<1)\n");
+		exit(-1);
+	}
 
-	for (int i = 0; i < max_profundidad; i++) {
-		do {
-			rellenarNodo(aux);
-			aux = aux->drcha;
-		} while(aux);
+	// Rellenamos el nodo pasado como argumento(rellenamos unicamente el nivel justo mas bajo)
+	rellenarNodo(n);
 
-		altura_a_rellenar = arbol.hijomasizquierda(altura_a_rellenar);
-		aux = altura_a_rellenar;
+	ArbolGeneral<Tablero>::Nodo aux;
+
+	/*
+	Si la profundidad hasta la que hay que rellenar es mayor que 1, llamamos de nuevo a esta funcion
+	pasandole como argumento cada nodo hijo de este, y una produndidad una unidad mejor 
+	 */
+	if (max_profundidad > 1) {
+		for(aux = arbol.hijomasizquierda(n); aux != 0; aux = arbol.hermanoderecha(aux)){
+			rellenarNodoProfundidad(aux, max_profundidad-1);
+		}
 	}
 }
 

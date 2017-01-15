@@ -12,7 +12,7 @@ class JugadorAuto{
   	ArbolGeneral<Tablero> arbol;
 
 		void rellenarNodo(ArbolGeneral<Tablero>::Nodo n);
-		void rellenarArbol(int max_profundidad);
+		void rellenarNodoProfundidad(ArbolGeneral<Tablero>::Nodo n, int max_profundidad);
 
 	public:
 		/*
