@@ -10,9 +10,15 @@
 class JugadorAuto{
 	private:
   	ArbolGeneral<Tablero> arbol;
+		unsigned max_profundidad;
 
 		void rellenarNodo(ArbolGeneral<Tablero>::Nodo n);
-		void rellenarNodoProfundidad(ArbolGeneral<Tablero>::Nodo n, int max_profundidad);
+		void rellenarNodoProfundidad(ArbolGeneral<Tablero>::Nodo n, int profundidad);
+		void rellenarTablero(int profundidad);
+		void actualizar(Tablero tab);
+
+		const ArbolGeneral<Tablero>::Nodo buscarNodo(ArbolGeneral<Tablero>::Nodo n, Tablero tab ) const;
+		const ArbolGeneral<Tablero>::Nodo buscarNodoProfundidad(ArbolGeneral<Tablero>::Nodo n, Tablero tab, int profundidad) const;
 
 	public:
 		/*
@@ -22,6 +28,7 @@ class JugadorAuto{
   	JugadorAuto(const Tablero &t);
 
 		ArbolGeneral<Tablero> GetArbol();
+
 
 		/* TODO Pendientes de revision
 		void CalcularPrimeraFila(const Tablero t);
