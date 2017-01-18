@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CONECTA 4: Fichero Fuente include/JugadorAuto.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CONECTA 4
+   &#160;<span id="projectnumber">V1.0</span>
+   </div>
+   <div id="projectbrief">CONECTA 4: Explorando el espacio de soluciones con Árboles</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">JugadorAuto.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="JugadorAuto_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CONECTA4_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __CONECTA4_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ArbolGeneral_8hpp.html">ArbolGeneral.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tablero_8hpp.html">tablero.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classJugadorAuto.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJugadorAuto.html">JugadorAuto</a>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classJugadorAuto.html#a0ceb9994f364572f00abf5c490b50319">   12</a></span>&#160;    <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;</a> <a class="code" href="classJugadorAuto.html#a0ceb9994f364572f00abf5c490b50319">arbol</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classJugadorAuto.html#a442a2ba01ebcc71283833176e214b7d3">   13</a></span>&#160;        <span class="keywordtype">unsigned</span> <a class="code" href="classJugadorAuto.html#a442a2ba01ebcc71283833176e214b7d3">max_profundidad</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classJugadorAuto.html#ae90fa3f90f9f0357a1e04512e1352f80">rellenarNodo</a>(<a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;::Nodo</a> n);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classJugadorAuto.html#add87179bcda9c297dfe06ca327a3de84">rellenarNodoProfundidad</a>(<a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;::Nodo</a> n, <span class="keywordtype">unsigned</span> profundidad);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classJugadorAuto.html#a037135d5bad9b9ce107f3d1aeb63b1df">rellenarTablero</a>(<span class="keywordtype">unsigned</span> profundidad);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">const</span> <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;::Nodo</a> <a class="code" href="classJugadorAuto.html#ace20f5c31c291f99491df06b356ae37d">buscarNodo</a>(<a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;::Nodo</a> n, <a class="code" href="classTablero.html">Tablero</a> tab ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">const</span> <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;::Nodo</a> <a class="code" href="classJugadorAuto.html#aeeda871eb999ffc3e9d4a87cdcc01e7d">buscarNodoProfundidad</a>(<a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;::Nodo</a> n, <a class="code" href="classTablero.html">Tablero</a> tab, <span class="keywordtype">int</span> profundidad) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        Constructores</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classJugadorAuto.html#a28f4b4c52165488379729d71237a41a9">   26</a></span>&#160;    <a class="code" href="classJugadorAuto.html#a28f4b4c52165488379729d71237a41a9">JugadorAuto</a>(){}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classJugadorAuto.html#a28f4b4c52165488379729d71237a41a9">JugadorAuto</a>(<span class="keyword">const</span> <a class="code" href="classTablero.html">Tablero</a> &amp;t);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;Tablero&gt;</a> <a class="code" href="classJugadorAuto.html#a74531aa932becde453fe8667f6455413">GetArbol</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classJugadorAuto.html#ac1c2056f753f8f09d2acf9a72e822fb2">actualizar</a>(<a class="code" href="classTablero.html">Tablero</a> tab);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classJugadorAuto_html_aeeda871eb999ffc3e9d4a87cdcc01e7d"><div class="ttname"><a href="classJugadorAuto.html#aeeda871eb999ffc3e9d4a87cdcc01e7d">JugadorAuto::buscarNodoProfundidad</a></div><div class="ttdeci">const ArbolGeneral&lt; Tablero &gt;::Nodo buscarNodoProfundidad(ArbolGeneral&lt; Tablero &gt;::Nodo n, Tablero tab, int profundidad) const </div></div>
+<div class="ttc" id="tablero_8hpp_html"><div class="ttname"><a href="tablero_8hpp.html">tablero.hpp</a></div></div>
+<div class="ttc" id="classJugadorAuto_html_ae90fa3f90f9f0357a1e04512e1352f80"><div class="ttname"><a href="classJugadorAuto.html#ae90fa3f90f9f0357a1e04512e1352f80">JugadorAuto::rellenarNodo</a></div><div class="ttdeci">void rellenarNodo(ArbolGeneral&lt; Tablero &gt;::Nodo n)</div></div>
+<div class="ttc" id="classJugadorAuto_html_a037135d5bad9b9ce107f3d1aeb63b1df"><div class="ttname"><a href="classJugadorAuto.html#a037135d5bad9b9ce107f3d1aeb63b1df">JugadorAuto::rellenarTablero</a></div><div class="ttdeci">void rellenarTablero(unsigned profundidad)</div></div>
+<div class="ttc" id="classJugadorAuto_html_add87179bcda9c297dfe06ca327a3de84"><div class="ttname"><a href="classJugadorAuto.html#add87179bcda9c297dfe06ca327a3de84">JugadorAuto::rellenarNodoProfundidad</a></div><div class="ttdeci">void rellenarNodoProfundidad(ArbolGeneral&lt; Tablero &gt;::Nodo n, unsigned profundidad)</div></div>
+<div class="ttc" id="classJugadorAuto_html_ac1c2056f753f8f09d2acf9a72e822fb2"><div class="ttname"><a href="classJugadorAuto.html#ac1c2056f753f8f09d2acf9a72e822fb2">JugadorAuto::actualizar</a></div><div class="ttdeci">void actualizar(Tablero tab)</div></div>
+<div class="ttc" id="classJugadorAuto_html_ace20f5c31c291f99491df06b356ae37d"><div class="ttname"><a href="classJugadorAuto.html#ace20f5c31c291f99491df06b356ae37d">JugadorAuto::buscarNodo</a></div><div class="ttdeci">const ArbolGeneral&lt; Tablero &gt;::Nodo buscarNodo(ArbolGeneral&lt; Tablero &gt;::Nodo n, Tablero tab) const </div></div>
+<div class="ttc" id="ArbolGeneral_8hpp_html"><div class="ttname"><a href="ArbolGeneral_8hpp.html">ArbolGeneral.hpp</a></div></div>
+<div class="ttc" id="classJugadorAuto_html_a28f4b4c52165488379729d71237a41a9"><div class="ttname"><a href="classJugadorAuto.html#a28f4b4c52165488379729d71237a41a9">JugadorAuto::JugadorAuto</a></div><div class="ttdeci">JugadorAuto()</div><div class="ttdef"><b>Definition:</b> JugadorAuto.hpp:26</div></div>
+<div class="ttc" id="classTablero_html"><div class="ttname"><a href="classTablero.html">Tablero</a></div><div class="ttdoc">T.D.A. Tablero. </div><div class="ttdef"><b>Definition:</b> tablero.hpp:54</div></div>
+<div class="ttc" id="classJugadorAuto_html_a0ceb9994f364572f00abf5c490b50319"><div class="ttname"><a href="classJugadorAuto.html#a0ceb9994f364572f00abf5c490b50319">JugadorAuto::arbol</a></div><div class="ttdeci">ArbolGeneral&lt; Tablero &gt; arbol</div><div class="ttdef"><b>Definition:</b> JugadorAuto.hpp:12</div></div>
+<div class="ttc" id="classArbolGeneral_html"><div class="ttname"><a href="classArbolGeneral.html">ArbolGeneral&lt; Tablero &gt;</a></div></div>
+<div class="ttc" id="classJugadorAuto_html"><div class="ttname"><a href="classJugadorAuto.html">JugadorAuto</a></div><div class="ttdef"><b>Definition:</b> JugadorAuto.hpp:10</div></div>
+<div class="ttc" id="classJugadorAuto_html_a74531aa932becde453fe8667f6455413"><div class="ttname"><a href="classJugadorAuto.html#a74531aa932becde453fe8667f6455413">JugadorAuto::GetArbol</a></div><div class="ttdeci">ArbolGeneral&lt; Tablero &gt; GetArbol()</div></div>
+<div class="ttc" id="classJugadorAuto_html_a442a2ba01ebcc71283833176e214b7d3"><div class="ttname"><a href="classJugadorAuto.html#a442a2ba01ebcc71283833176e214b7d3">JugadorAuto::max_profundidad</a></div><div class="ttdeci">unsigned max_profundidad</div><div class="ttdef"><b>Definition:</b> JugadorAuto.hpp:13</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
