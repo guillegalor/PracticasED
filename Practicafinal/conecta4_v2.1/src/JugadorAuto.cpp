@@ -151,21 +151,45 @@ unsigned JugadorAuto::metrica_defensiva_simple() {
 }
 
 int JugadorAuto::contarNumVictorias(ArbolGeneral<Tablero>::Nodo n){
-	int num_victorias = 0;
+	if (n) {
+		int num_victorias = 0;
 
-	ArbolGeneral<Tablero>::Nodo aux, aux2;
-	for(aux = arbol.hijomasizquierda(n); (aux != 0); aux = arbol.hermanoderecha(aux))
-		for(aux2 = arbol.hijomasizquierda(aux); (aux2 != 0); aux2 = arbol.hermanoderecha(aux2))
-			if (arbol.etiqueta(aux2).quienGana() == arbol.etiqueta(aux).GetTurno())
-				++num_victorias;
+		ArbolGeneral<Tablero>::Nodo aux, aux2;
+		for(aux = arbol.hijomasizquierda(n); (aux != 0); aux = arbol.hermanoderecha(aux))
+			for(aux2 = arbol.hijomasizquierda(aux); (aux2 != 0); aux2 = arbol.hermanoderecha(aux2))
+				if (arbol.etiqueta(aux2).quienGana() == arbol.etiqueta(aux).GetTurno())
+					++num_victorias;
+				else
+					num_victorias += contarNumVictorias(aux2);
+
+			return num_victorias;
+	}
+	else
+		return 0;
+
+}
+
+int JugadorAuto::contarNumDerrotas(ArbolGeneral<Tablero>::Nodo n){
+	if (n) {
+		int num_derrotas = 0;
+
+		ArbolGeneral<Tablero>::Nodo aux, aux2;
+		for(aux = arbol.hijomasizquierda(n); (aux != 0); aux = arbol.hermanoderecha(aux))
+			if (arbol.etiqueta(aux).quienGana() == arbol.etiqueta(n).GetTurno())
+				++num_derrotas;
 			else
-				num_victorias += contarNumVictorias(aux2);
+				for(aux2 = arbol.hijomasizquierda(aux); (aux2 != 0); aux2 = arbol.hermanoderecha(aux2))
+					num_derrotas += contarNumVictorias(aux2);
 
-		return num_victorias;
+			return num_derrotas;
+	}
+	else
+		return 0;
 }
 
 unsigned JugadorAuto::metrica_ofensiva(){
-	rellenarTablero(4);
+	rellenarTablero(6);
+
 	ArbolGeneral<Tablero>::Nodo aux,n = arbol.raiz();
 	int rta;
 	std::vector<int> soluciones, num_victorias;
@@ -182,12 +206,52 @@ unsigned JugadorAuto::metrica_ofensiva(){
 			num_victorias.push_back(contarNumVictorias(aux));
 		}
 
+	if (soluciones.empty()) {
+		return 0;
+	}
+
 	int max = num_victorias[0];
 	rta = soluciones[0];
 
 	for (size_t i = 1; i < soluciones.size(); i++) {
 		if (num_victorias[i] > max) {
 			max = num_victorias[i];
+			rta = soluciones[i];
+		}
+	}
+
+	return rta;
+}
+
+unsigned JugadorAuto::metrica_defensiva(){
+	rellenarTablero(6);
+
+	ArbolGeneral<Tablero>::Nodo aux,n = arbol.raiz();
+	int rta;
+	std::vector<int> soluciones, num_derrotas;
+	bool found = false;
+	int pierde;
+
+	if ((rta = gana(n))) {
+		return rta;
+	}
+
+	for(aux = arbol.hijomasizquierda(n); (aux != 0) && !found; aux = arbol.hermanoderecha(aux), ++rta)
+		if (!(pierde = gana(aux))){
+			soluciones.push_back(rta);
+			num_derrotas.push_back(contarNumDerrotas(aux));
+		}
+
+	if (soluciones.empty()) {
+		return 0;
+	}
+
+	int min = num_derrotas[0];
+	rta = soluciones[0];
+
+	for (size_t i = 1; i < soluciones.size(); i++) {
+		if (num_derrotas[i] < min) {
+			min = num_derrotas[i];
 			rta = soluciones[i];
 		}
 	}

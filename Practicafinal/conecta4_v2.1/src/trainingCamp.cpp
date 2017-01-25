@@ -76,7 +76,7 @@ int jugar_partida() {
 				else{
 					system("clear");
 					j2.actualizar(tablero);
-					tablero.colocarFicha(j2.metrica_defensiva_simple());
+					tablero.colocarFicha(j2.metrica_defensiva());
 					tablero.cambiarTurno();
 					imprimeTablero(tablero, mando);
 					quienGana = tablero.quienGana();

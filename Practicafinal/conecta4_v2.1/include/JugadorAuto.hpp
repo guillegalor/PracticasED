@@ -19,6 +19,7 @@ class JugadorAuto{
 		const ArbolGeneral<Tablero>::Nodo buscarNodoProfundidad(ArbolGeneral<Tablero>::Nodo n, Tablero tab, int profundidad) const;
 		int gana(ArbolGeneral<Tablero>:: Nodo n);
 		int contarNumVictorias(ArbolGeneral<Tablero>::Nodo n);
+		int contarNumDerrotas(ArbolGeneral<Tablero>::Nodo n);
 
 	public:
 		/*
@@ -32,6 +33,7 @@ class JugadorAuto{
 		void rellenarTablero(unsigned profundidad); // TODO Esta funcion es privada. Esta aquí para pruebas
 		void actualizar(Tablero tab);
 		unsigned metrica_defensiva_simple();
+		unsigned metrica_defensiva();
 		unsigned metrica_ofensiva();
 
 };
