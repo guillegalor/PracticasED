@@ -145,7 +145,7 @@ unsigned JugadorAuto::metrica_defensiva_simple() {
 			soluciones.push_back(rta);
 
 	if (!soluciones.empty())
-		return soluciones[0];
+		return soluciones[soluciones.size()/2];
 	else
 		return 0;
 }

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gana',['gana',['../classJugadorAuto.html#ac549b60abbbae7245321cf7436382de6',1,'JugadorAuto']]],
   ['getarbol',['GetArbol',['../classJugadorAuto.html#a74531aa932becde453fe8667f6455413',1,'JugadorAuto']]],
   ['getbase',['GetBase',['../classMando.html#abcc813b0881e56ed976eea2ce6b7fd12',1,'Mando']]],
   ['getcolumnas',['GetColumnas',['../classTablero.html#a3cc99292123bdc0c33fcede9ce79e1bf',1,'Tablero']]],
