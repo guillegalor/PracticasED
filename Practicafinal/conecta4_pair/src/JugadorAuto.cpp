@@ -81,7 +81,7 @@ const ArbolGeneral<std::pair<int, Tablero> >::Nodo JugadorAuto::buscarNodo(Arbol
   return aux;
 }
 
-//Precondicion: la profundidad no puede ser negativa. TODO Nodo que devuelve cte?
+//Precondicion: la profundidad no puede ser negativa.
 const ArbolGeneral<std::pair<int, Tablero> >::Nodo JugadorAuto::buscarNodoProfundidad(ArbolGeneral<std::pair<int, Tablero> >::Nodo n, Tablero tab, int profundidad) const{
   ArbolGeneral<std::pair<int, Tablero> >::Nodo aux, resultado;
 

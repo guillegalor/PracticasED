@@ -34,6 +34,14 @@ class JugadorAuto{
 		void rellenarNodoProfundidad(ArbolGeneral<std::pair<int, Tablero> >::Nodo n, unsigned profundidad);
 
 		/**
+		 * @brief Rellena el arbol de tableros, con todos los tableros
+		 * posibles hasta una profundidad.
+		 * @param max_profundidad Indica la profundidad con la que se va
+		 * a calcular las posibles jugadas.
+		 */
+		void rellenarTablero(unsigned profundidad);
+
+		/**
 		 * @brief Busca un tablero igual al que se le ha pasado en los nodos
 		 * hijos del nodo.
 		 * @param  n   Nodo en el que buscar.
@@ -91,23 +99,6 @@ class JugadorAuto{
   	JugadorAuto(const Tablero &t);
 
 		/**
-		 * @brief Devuelve el arbol de tableros.
-		 * IMPORTANTE: Esta función esta pendiente de revisión, la estamos usando
-		 * para probar si funcionan los metodos de la clase, extrayendo
-		 * el arbol y mostrandolo por pantalla.
-		 * @return Devuelve el arbol de la clase.
-		 */
-		ArbolGeneral<std::pair<int, Tablero> > GetArbol();	// TODO Esta funcion no deberia de existir. Solo pruebas
-
-		/**
-		 * @brief Rellena el arbol de tableros, con todos los tableros
-		 * posibles hasta una profundidad.
-		 * @param max_profundidad Indica la profundidad con la que se va
-		 * a calcular las posibles jugadas.
-		 */
-		void rellenarTablero(unsigned profundidad); // TODO Esta funcion es privada. Esta aquí para pruebas
-
-		/**
 		 * @brief Actualiza el arbol de tableros, poniendo como raiz
 		 * el Tablero pasado como parámetro.
 		 * @param tab tablero del cual se desea empezar a calcular el árbol
@@ -123,8 +114,8 @@ class JugadorAuto{
 
 		/**
 		 * @brief Busca el lugar en el que meter ficha para ganar, y si
-		 * no puede, busca como defenderse para no perder, con la diferencia
-		 * que analiza la jugada en más niveles.
+		 * no puede, busca como defenderse para no perder, contando el numero de
+		 * derrotas tras cada posible jugada suya
 		 * @return Número de tableros en los que gana el jugador
 		 */
 		int metrica_defensiva();
@@ -132,8 +123,7 @@ class JugadorAuto{
 		/**
 		 * @brief Busca el lugar en el que meter ficha para ganar, y si
 		 * no puede, busca donde insertar ficha analizando las posibles
-		 * partidas para poder ganar
-		 * que analiza la jugada en más niveles.
+		 * partidas para poder ganar.
 		 * @return Número de tableros en los que gana el jugador
 		 */
 		int metrica_ofensiva();
