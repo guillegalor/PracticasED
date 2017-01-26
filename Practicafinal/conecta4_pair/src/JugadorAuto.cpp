@@ -123,7 +123,7 @@ void JugadorAuto::actualizar(Tablero tab){
 
 int JugadorAuto::gana(ArbolGeneral<std::pair<int, Tablero> >:: Nodo n){
 	ArbolGeneral<std::pair<int, Tablero> >::Nodo aux;
-	unsigned rta = -1;
+	int rta = -1;
 	for(aux = arbol.hijomasizquierda(n); (aux != 0) && (rta == -1); aux = arbol.hermanoderecha(aux)){
 		if (arbol.etiqueta(aux).second.quienGana() == arbol.etiqueta(n).second.GetTurno())
 			rta = arbol.etiqueta(aux).first;
@@ -132,7 +132,7 @@ int JugadorAuto::gana(ArbolGeneral<std::pair<int, Tablero> >:: Nodo n){
 	return rta;
 }
 
-unsigned JugadorAuto::metrica_defensiva_simple() {
+int JugadorAuto::metrica_defensiva_simple() {
 	rellenarTablero(3);
 
 	ArbolGeneral<std::pair<int, Tablero> >::Nodo aux,n = arbol.raiz();
@@ -191,7 +191,7 @@ int JugadorAuto::contarNumDerrotas(ArbolGeneral<std::pair<int, Tablero> >::Nodo 
 		return 0;
 }
 
-unsigned JugadorAuto::metrica_ofensiva(){
+int JugadorAuto::metrica_ofensiva(){
 	rellenarTablero(6);
 
 	ArbolGeneral<std::pair<int, Tablero> >::Nodo aux,n = arbol.raiz();
@@ -226,7 +226,7 @@ unsigned JugadorAuto::metrica_ofensiva(){
 	return rta;
 }
 
-unsigned JugadorAuto::metrica_defensiva(){
+int JugadorAuto::metrica_defensiva(){
 	rellenarTablero(6);
 
 	ArbolGeneral<std::pair<int, Tablero> >::Nodo aux,n = arbol.raiz();
