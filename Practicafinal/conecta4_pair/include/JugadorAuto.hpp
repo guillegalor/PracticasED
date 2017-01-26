@@ -1,0 +1,42 @@
+#ifndef __CONECTA4_H__
+#define __CONECTA4_H__
+
+
+#include "ArbolGeneral.hpp"
+#include "tablero.hpp"
+#include <utility>
+#include <cassert>
+
+
+class JugadorAuto{
+	private:
+  	ArbolGeneral<std::pair<int,Tablero> > arbol;
+		unsigned max_profundidad;
+
+		void rellenarNodo(ArbolGeneral<std::pair<int, Tablero> >::Nodo n);
+		void rellenarNodoProfundidad(ArbolGeneral<std::pair<int, Tablero> >::Nodo n, unsigned profundidad);
+
+		const ArbolGeneral<std::pair<int, Tablero> >::Nodo buscarNodo(ArbolGeneral<std::pair<int, Tablero> >::Nodo n, Tablero tab ) const;
+		const ArbolGeneral<std::pair<int, Tablero> >::Nodo buscarNodoProfundidad(ArbolGeneral<std::pair<int, Tablero> >::Nodo n, Tablero tab, int profundidad) const;
+		int gana(ArbolGeneral<std::pair<int, Tablero> >:: Nodo n);
+		int contarNumVictorias(ArbolGeneral<std::pair<int, Tablero> >::Nodo n);
+		int contarNumDerrotas(ArbolGeneral<std::pair<int, Tablero> >::Nodo n);
+
+	public:
+		/*
+		Constructores
+		 */
+  	JugadorAuto():max_profundidad(0){}
+  	JugadorAuto(const Tablero &t);
+
+		ArbolGeneral<std::pair<int, Tablero> > GetArbol();	// TODO Esta funcion no deberia de existir. Solo pruebas
+
+		void rellenarTablero(unsigned profundidad); // TODO Esta funcion es privada. Esta aquí para pruebas
+		void actualizar(Tablero tab);
+		unsigned metrica_defensiva_simple();
+		unsigned metrica_defensiva();
+		unsigned metrica_ofensiva();
+
+};
+
+#endif
