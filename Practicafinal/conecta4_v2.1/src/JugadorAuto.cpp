@@ -179,7 +179,7 @@ int JugadorAuto::contarNumDerrotas(ArbolGeneral<Tablero>::Nodo n){
 				++num_derrotas;
 			else
 				for(aux2 = arbol.hijomasizquierda(aux); (aux2 != 0); aux2 = arbol.hermanoderecha(aux2))
-					num_derrotas += contarNumVictorias(aux2);
+					num_derrotas += contarNumDerrotas(aux2);
 
 			return num_derrotas;
 	}

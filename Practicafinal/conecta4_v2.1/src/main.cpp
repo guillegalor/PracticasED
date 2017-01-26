@@ -23,20 +23,23 @@ int main(int argc, char const *argv[]) {
 	Mando mando(tablero);
 
 	tablero.colocarFicha(3);
-	tablero.colocarFicha(1);
-	tablero.colocarFicha(2);
-	tablero.colocarFicha(6);
+	tablero.colocarFicha(3);
+	tablero.colocarFicha(3);
+	tablero.colocarFicha(3);
+	tablero.colocarFicha(3);
+	if (tablero.colocarFicha(3)) {
+		printf("No da error al insertar una ficha en una columna llena\n");
+	}
+	else
+		printf("Da error al colocar una ficha en una columna llena\n");
 
 	tablero.cambiarTurno();
-	tablero.colocarFicha(1);
-	tablero.colocarFicha(2);
 	tablero.colocarFicha(0);
-	tablero.colocarFicha(6);
 
 	imprimeTablero(tablero, mando);
 
 	JugadorAuto j1(tablero);
-	tablero.colocarFicha(j1.metrica_defensiva_simple());
+	tablero.colocarFicha(j1.metrica_defensiva());
 	imprimeTablero(tablero, mando);
 
 

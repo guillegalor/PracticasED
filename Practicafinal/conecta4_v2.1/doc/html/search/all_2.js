@@ -6,6 +6,7 @@ var searchData=
   ['columnas',['columnas',['../classTablero.html#ac70289ec91b44d05da648770cc46801d',1,'Tablero']]],
   ['contar',['contar',['../classArbolGeneral.html#ac53afcc4c99179132bf593781d7c927f',1,'ArbolGeneral']]],
   ['contar_5fhijos',['contar_Hijos',['../classArbolGeneral.html#a6a56e71e7f38894d58b9649a653d0948',1,'ArbolGeneral']]],
+  ['contarnumderrotas',['contarNumDerrotas',['../classJugadorAuto.html#a131bba1aecfc13b5fc16f3f287fb5f42',1,'JugadorAuto']]],
   ['contarnumvictorias',['contarNumVictorias',['../classJugadorAuto.html#a79ebbd4001280b8d81f1bdb8376214e5',1,'JugadorAuto']]],
   ['copiar',['copiar',['../classArbolGeneral.html#a79f31cbba599abea7ab8b2f4ac7bef91',1,'ArbolGeneral']]]
 ];

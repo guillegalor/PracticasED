@@ -76,7 +76,10 @@ int jugar_partida() {
 				else{
 					system("clear");
 					j2.actualizar(tablero);
-					tablero.colocarFicha(j2.metrica_defensiva());
+					int jugada = j2.metrica_defensiva();
+					if (!tablero.colocarFicha(jugada)) {
+						printf("Error al colocar la ficha en la pos %d\n", jugada);
+					}
 					tablero.cambiarTurno();
 					imprimeTablero(tablero, mando);
 					quienGana = tablero.quienGana();
